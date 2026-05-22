@@ -3,7 +3,6 @@
   "nav_home": "Home",
   "nav_programs": "Programs",
   "nav_history": "Sailing Race Dates and Prices",
-  "nav_announcements": "Announcements",
   "nav_contact": "Contact",
   "btn_register": "Register",
   "hero_title": "Inter-Company Sailing Race",
@@ -347,9 +346,5 @@
   "date_7": "4 - 9 August",
   "date_8": "11 - 16 August",
   "date_9": "18 - 23 August",
-  "date_10": "25 - 30 August",
-  
-  "announcements_page_title": "Sailing Cup | Announcements",
-  "content_announcements_title": "Announcements",
-  "content_announcements_desc": "Current announcements and news will be here very soon."
+  "date_10": "25 - 30 August"
 }

@@ -3,7 +3,6 @@
   "nav_home": "Anasayfa",
   "nav_programs": "Programlar",
   "nav_history": "Yelken Yarışı Tarihi ve Fiyatlar",
-  "nav_announcements": "Duyurular",
   "nav_contact": "İletişim",
   "btn_register": "Kayıt Ol",
   "hero_title": "Şirketler Arası Yelken Yarışı",
@@ -347,9 +346,5 @@
   "date_7": "4 - 9 Ağustos",
   "date_8": "11 - 16 Ağustos",
   "date_9": "18 - 23 Ağustos",
-  "date_10": "25 - 30 Ağustos",
-
-  "announcements_page_title": "Yelken Kupası | Duyurular",
-  "content_announcements_title": "Duyurular",
-  "content_announcements_desc": "Güncel duyurular ve haberler çok yakında burada olacak."
+  "date_10": "25 - 30 Ağustos"
 }

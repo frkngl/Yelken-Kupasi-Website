@@ -107,18 +107,27 @@
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 .schedule-section .schedule-table .badge.available {
-  background-color: rgba(147, 211, 92, 0.2);
-  color: rgb(83.9347826087, 138.1956521739, 37.3043478261);
+  background: linear-gradient(135deg, #11d979 0%, #04974d 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(17, 217, 121, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.schedule-section .schedule-table .badge.available:hover {
+  transform: translateY(-2px);
 }
 .schedule-section .schedule-table .badge.optional {
   background-color: rgba(255, 92, 0, 0.15);
   color: #ff5c00;
+  pointer-events: none;
 }
 .schedule-section .schedule-table .badge.reserved {
   background-color: #fce4e4;
   color: #d93025;
+  pointer-events: none;
 }
 @media screen and (max-width: 768px) {
   .schedule-section {

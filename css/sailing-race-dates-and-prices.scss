@@ -143,20 +143,31 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 0.5px;
+            text-decoration: none; // Linklerin altının çizilmesini engeller
+            transition: all 0.3s ease; // Yumuşak bir geçiş animasyonu sağlar
 
             &.available {
-                background-color: rgba($green, 0.2);
-                color: darken($green, 25%); // Yazıyı okunabilir yapmak için koyulaştırır
+                background: linear-gradient(135deg, #11d979 0%, #04974d 100%);
+                color: #ffffff;
+                box-shadow: 0 4px 10px rgba(17, 217, 121, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+
+                // Üzerine gelindiğinde (Hover durumu)
+                &:hover {
+                    transform: translateY(-2px); // Hafifçe yukarı kalkar
+                }
             }
 
             &.optional {
                 background-color: rgba($orange, 0.15);
                 color: $orange;
+                pointer-events: none; // İmleci değiştirir, tıklanamaz olduğunu belirtir
             }
 
             &.reserved {
                 background-color: #fce4e4;
                 color: #d93025;
+                pointer-events: none; // İmleci değiştirir, tıklanamaz olduğunu belirtir
             }
         }
     }
