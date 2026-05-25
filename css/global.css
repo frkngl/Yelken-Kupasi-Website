@@ -172,8 +172,8 @@ body .whatsapp-btn:hover {
 }
 @media screen and (max-width: 1050px) {
   .btn-primary {
-    padding: 10px;
-    font-size: 14px;
+    padding: 12px;
+    font-size: 15px;
   }
 }
 

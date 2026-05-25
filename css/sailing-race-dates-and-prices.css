@@ -108,7 +108,8 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
 }
 .schedule-section .schedule-table .badge.available {
   background: linear-gradient(135deg, #11d979 0%, #04974d 100%);
@@ -117,7 +118,14 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .schedule-section .schedule-table .badge.available:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(17, 217, 121, 0.5);
+  filter: brightness(1.1);
+}
+.schedule-section .schedule-table .badge.available:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 5px rgba(17, 217, 121, 0.3);
+  transition: all 0.1s ease;
 }
 .schedule-section .schedule-table .badge.optional {
   background-color: rgba(255, 92, 0, 0.15);

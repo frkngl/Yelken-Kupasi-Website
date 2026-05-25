@@ -144,7 +144,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 600;
             letter-spacing: 0.5px;
             text-decoration: none; // Linklerin altının çizilmesini engeller
-            transition: all 0.3s ease; // Yumuşak bir geçiş animasyonu sağlar
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); // Daha akıcı ve doğal bir animasyon
+            cursor: pointer; // Fare imlecinin el işareti olmasını garanti altına alır
 
             &.available {
                 background: linear-gradient(135deg, #11d979 0%, #04974d 100%);
@@ -152,22 +153,31 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 box-shadow: 0 4px 10px rgba(17, 217, 121, 0.3);
                 border: 1px solid rgba(255, 255, 255, 0.2);
 
-                // Üzerine gelindiğinde (Hover durumu)
+                // Üzerine gelindiğinde (Hover durumu - Dikkat çekme)
                 &:hover {
-                    transform: translateY(-2px); // Hafifçe yukarı kalkar
+                    transform: translateY(-3px) scale(1.03); // Hem yukarı kalkar hem de %3 büyür
+                    box-shadow: 0 8px 18px rgba(17, 217, 121, 0.5); // Gölge genişler ve belirginleşir
+                    filter: brightness(1.1); // Rengi %10 daha parlak hale getirerek tıklamaya teşvik eder
+                }
+
+                // Tıklama anında (Active durumu - Basılma hissi)
+                &:active {
+                    transform: translateY(1px) scale(0.98); // Aşağı doğru hafifçe basılır
+                    box-shadow: 0 2px 5px rgba(17, 217, 121, 0.3); // Gölge küçülür
+                    transition: all 0.1s ease; // Tıklama tepkisinin çok daha hızlı olmasını sağlar
                 }
             }
 
             &.optional {
                 background-color: rgba($orange, 0.15);
                 color: $orange;
-                pointer-events: none; // İmleci değiştirir, tıklanamaz olduğunu belirtir
+                pointer-events: none; // Tıklanamaz
             }
 
             &.reserved {
                 background-color: #fce4e4;
                 color: #d93025;
-                pointer-events: none; // İmleci değiştirir, tıklanamaz olduğunu belirtir
+                pointer-events: none; // Tıklanamaz
             }
         }
     }
