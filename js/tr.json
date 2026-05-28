@@ -347,5 +347,43 @@
   "date_7": "4 - 9 Ağustos",
   "date_8": "11 - 16 Ağustos",
   "date_9": "18 - 23 Ağustos",
-  "date_10": "25 - 30 Ağustos"
+  "date_10": "25 - 30 Ağustos",
+
+  "faq-title": "Sıkça Sorulan Sorular",
+  "faq-subtitle": "Yelken Kupası organizasyonları hakkında merak ettiğiniz tüm detaylar ve cevapları.",
+  
+  "faq-q1-question": "Organizasyona katılım seçenekleri nelerdir?",
+  "faq-q1-answer-intro": "Şirketlerin ihtiyaçlarına göre iki farklı katılım modelimiz bulunmaktadır:",
+  "faq-q1-list1-title": "Şirketler Yelken Kupası:",
+  "faq-q1-list1-desc": "Farklı şirketlerin bir araya gelerek yarıştığı, sektörel networking ve rekabetin ön planda olduğu etkinliktir. Cuma, Cumartesi ve Pazar günleri olmak üzere 3 gün sürer ve etkinlik kapasitesi maksimum 46 kişi ile sınırlıdır.",
+  "faq-q1-list2-title": "Şirket İçi Yelken Kupası:",
+  "faq-q1-list2-desc": "Tamamen kendi şirketinize ve çalışanlarınıza özel olarak düzenlenen, kapalı devre organizasyonumuzdur. Bu modelde kişi sayısı sınırı yoktur. Katılımcı sayınıza göre etkinlik gün sayısı, program ve tahsis edilecek tekne sayısı size özel olarak artırılıp projelendirilir.",
+  
+  "faq-q2-question": "Tekne ve yelken ekipmanlarını biz mi getiriyoruz?",
+  "faq-q2-answer": "Hayır, ister Şirketler Kupası'na ister Şirket İçi Yelken Kupası'na katılın, yarışılacak tüm tekneler, donanımlar ve can yeleği gibi güvenlik ekipmanları organizasyonumuz tarafından sağlanmaktadır. Sizin sadece teknede rahat hareket edebileceğiniz spor kıyafetler ve kaymaz tabanlı spor ayakkabılarla gelmeniz yeterlidir.",
+  
+  "faq-q3-question": "Ekibimizde hiç kimse yelken kullanmayı bilmiyor, katılabilir miyiz?",
+  "faq-q3-answer": "Kesinlikle. Katılımcıların hiçbir denizcilik veya yelken tecrübesine sahip olması gerekmiyor. Her tekneye organizasyonumuz tarafından profesyonel ve lisanslı bir dümenci atanıyor. Kaptanınız size ne yapmanız gerektiğini anlık olarak söyleyecek ve güvenli bir şekilde yarışmanızı sağlayacak.",
+  
+  "faq-q4-question": "Yarışlar güvenli mi? Herhangi bir risk var mı?",
+  "faq-q4-answer": "Güvenlik en büyük önceliğimizdir. Yarış parkuru tamamen kontrollü bir alanda kurulur ve yarış boyunca denizde hazır bekleyen profesyonel güvenlik botları ile sağlık ekipleri bulunur.",
+  
+  "faq-q5-question": "Bir takım kaç kişiden oluşuyor? Şirket olarak katılımda kişi sınırımız var mı?",
+  "faq-q5-answer-intro": "Yarışlar tekne bazlı yapıldığı için, her bir tekne ekibi tam 3 kişiden oluşmaktadır (Dümenci bu sayıya dahil değildir).",
+  "faq-q5-list1-title": "Şirketler Yelken Kupası'nda:",
+  "faq-q5-list1-desc": "Toplam 46 kişilik etkinlik kontenjanı dahilinde, şirketinizden dilediğiniz sayıda 3'er kişilik takımlar kurarak yer alabilirsiniz.",
+  "faq-q5-list2-title": "Şirket İçi Yelken Kupası'nda:",
+  "faq-q5-list2-desc": "Şirketinizin büyüklüğüne göre bu 3'er kişilik takımların sayısı ve tekne adetleri ihtiyacınıza göre artırılarak özel bir filo kurulur.",
+  
+  "faq-q6-question": "Sadece yarış mı var, karada bizi neler bekliyor?",
+  "faq-q6-answer-p1": "Yelken Kupası sadece bir yarış değil, aynı zamanda kurumsal bir festivaldir. Yarış aralarında ve sonrasında Gülbahçe Yelken Kulübü'nün karadaki özel alanlarında DJ performansları, canlı yayın dinletileri, ikramlar ve harika sosyal alanlar sizi bekliyor.",
+  "faq-q6-answer-p2": "(Şirket İçi etkinliklerde bu alanlardaki aktiviteler tamamen kurum kültürünüze göre özelleştirilebilir.)",
+  
+  "faq-q7-question": "Konaklama ve ulaşım organizasyon paketine dahil mi?",
+  "faq-q7-answer": "Hayır, konaklama ve ulaşım standart etkinlik paketimize dahil değildir. Standart paketimiz yarış katılımını, tekne tahsisini, dümenci desteğini ve gün boyu karadaki yeme-içme ile eğlence faaliyetlerini kapsar. Ancak katılımcılarımızın talebi doğrultusunda, ek ücret karşılığında tüm konaklama ve transfer (ulaşım) süreçlerinizi sizin adınıza memnuniyetle organize edebiliriz.",
+  
+  "faq-q8-question": "Etkinlik tam olarak ne zaman ve nerede gerçekleşecek?",
+  "faq-q8-answer-p1": "Organizasyonlarımız rüzgarın ve doğanın en güzel uyum sağladığı",
+  "faq-q8-answer-bold": "Urla Gülbahçe Yelken Kulübü'nde",
+  "faq-q8-answer-p2": "gerçekleşmektedir. Şirketler Yelken Kupası için etkinlik takvimimiz dönemsel olarak güncellenmektedir; güncel müsaitlik durumunu web sitemizde yer alan takvim üzerinden inceleyebilirsiniz. Şirket İçi Yelken Kupası taleplerinizde ise tarihler karşılıklı görüşme ile tamamen size uygun şekilde belirlenmektedir."
 }

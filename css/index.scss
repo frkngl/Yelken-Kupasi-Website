@@ -1156,7 +1156,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Paketlerimiz Bölümü (Packages Section) ---
 .packages-section {
     width: 100%;
-    background-color: $light-green; // Hafif gri zemin
+    background-color: $dark-green; // Hafif gri zemin
     padding: 100px 20px;
 
     .packages-container {
@@ -1174,7 +1174,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $dark-green;
+            color: $light-green;
             margin-bottom: 15px;
         }
 
@@ -1182,6 +1182,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 3rem;
             font-weight: 800;
             letter-spacing: -1.5px;
+            color: $light-green;
         }
     }
 
@@ -1194,11 +1195,11 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     .package-card {
         flex: 1;
-        background-color: $dark-green; // Beyaz kart zemini
+        background-color: $light-green; // Beyaz kart zemini
         border-radius: 40px;
         overflow: hidden;
         transition: $transition;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        border: none;
 
         &:hover {
             transform: translateY(-12px);
@@ -1229,7 +1230,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 display: inline-block;
                 font-size: 0.85rem;
                 font-weight: 700;
-                color: $white;
+                color: $dark-green;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-bottom: 15px;
@@ -1238,14 +1239,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             h3 {
                 font-size: 1.8rem;
                 font-weight: 800;
-                color: $white;
+                color: $dark-green;
                 margin-bottom: 15px;
                 line-height: 1.2;
             }
 
             p {
                 font-size: 1.05rem;
-                color: $light-green;
+                color: $dark-green;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
@@ -1254,16 +1255,16 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             .btn-outline {
                 display: inline-block;
                 padding: 14px 28px;
-                border: 2px solid $white;
-                color: $white;
+                border: 2px solid $dark-green;
+                color: $dark-green;
                 text-decoration: none;
                 font-weight: 700;
                 border-radius: 12px;
                 transition: $transition;
 
                 &:hover {
-                    background-color: $white;
-                    color: $dark-green;
+                    background-color: $dark-green;
+                    color: $light-green;
                 }
             }
         }
@@ -1297,6 +1298,182 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             h3 {
                 font-size: 1.5rem;
             }
+        }
+    }
+}
+
+// --- FAQ Section Tasarımı ---
+.faq-section {
+    background-color: $light-green; // İstediğin arkaplan rengi
+    padding: 80px 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+
+    // İçerik Kapsayıcısı
+    .faq-container {
+        max-width: 900px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    // Başlıklar
+    .faq-title {
+        font-size: clamp(1.8rem, 4vw, 2.5rem); // Ekran boyutuna göre otomatik küçülür/büyür
+        color: $dark-green;
+        text-align: center;
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .faq-subtitle {
+        font-size: clamp(1rem, 2vw, 1.1rem);
+        color: $olive-green;
+        text-align: center;
+        margin-bottom: 48px;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    // Akordeon Listesi
+    .faq-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 16px; // Kartlar arası boşluk
+    }
+
+    // Tekil Soru Kartı
+    .faq-item {
+        background-color: $white;
+        border-radius: 12px;
+        border: 1px solid rgba($olive-green, 0.1);
+        box-shadow: 0 2px 8px rgba($dark-green, 0.04);
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: rgba($orange, 0.3);
+            box-shadow: 0 4px 12px rgba($dark-green, 0.08);
+            transform: translateY(-2px); // Hover'da hafif yukarı kalkma efekti
+        }
+
+        // Aktif (Açık) Durum
+        &.active {
+            border-color: $light-blue;
+            box-shadow: 0 4px 16px rgba($light-blue, 0.1);
+
+            .faq-question {
+                color: $orange;
+
+                .faq-icon {
+                    transform: rotate(180deg);
+                    color: $orange;
+                }
+            }
+
+            .faq-answer {
+                grid-template-rows: 1fr; // CSS Grid ile yüksekliği otomatik açma animasyonu
+
+                &-content {
+                    opacity: 1;
+                    padding: 0 24px 24px 24px;
+                }
+            }
+        }
+    }
+
+    // Tıklanabilir Soru Butonu
+    .faq-question {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        border: none;
+        padding: 24px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $dark-green;
+        text-align: left;
+        cursor: pointer;
+        transition: color 0.3s ease;
+
+        span {
+            padding-right: 20px;
+            line-height: 1.4;
+        }
+
+        .faq-icon {
+            width: 24px;
+            height: 24px;
+            color: $olive-green;
+            flex-shrink: 0;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+    }
+
+    // İçerik/Cevap Alanı (Default Kapalı)
+    .faq-answer {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.35s ease-in-out;
+
+        &-content {
+            // ".faq-answer-content" class'ına compile olur
+            overflow: hidden;
+            opacity: 0;
+            padding: 0 24px 0 24px;
+            transition: opacity 0.35s ease-in-out, padding 0.35s ease-in-out;
+            color: $olive-green;
+            font-size: 1rem;
+            line-height: 1.6;
+
+            p {
+                margin: 0 0 12px 0;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            strong {
+                color: $dark-green;
+                font-weight: 600;
+            }
+
+            ul {
+                margin: 8px 0;
+                padding-left: 20px;
+
+                li {
+                    margin-bottom: 8px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // Mobil Kırılma Noktası (Responsive)
+    @media (max-width: 768px) {
+        padding: 60px 16px;
+
+        .faq-item {
+            border-radius: 8px;
+        }
+
+        .faq-question {
+            padding: 18px;
+            font-size: 1rem;
+
+            .faq-icon {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .faq-item.active .faq-answer-content {
+            padding: 0 18px 18px 18px;
         }
     }
 }

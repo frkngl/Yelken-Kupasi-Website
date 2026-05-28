@@ -347,5 +347,43 @@
   "date_7": "4 - 9 August",
   "date_8": "11 - 16 August",
   "date_9": "18 - 23 August",
-  "date_10": "25 - 30 August"
+  "date_10": "25 - 30 August",
+
+  "faq-title": "Frequently Asked Questions",
+  "faq-subtitle": "All the details and answers you are wondering about the Sailing Cup events.",
+  
+  "faq-q1-question": "What are the participation options for the event?",
+  "faq-q1-answer-intro": "We have two different participation models based on the needs of companies:",
+  "faq-q1-list1-title": "Corporate Sailing Cup:",
+  "faq-q1-list1-desc": "An event where different companies come together to compete, focusing on sectoral networking and competition. It lasts for 3 days (Friday, Saturday, and Sunday) and the event capacity is limited to a maximum of 46 people.",
+  "faq-q1-list2-title": "Internal Company Sailing Cup:",
+  "faq-q1-list2-desc": "Our closed-circuit organization designed exclusively for your company and employees. There is no limit to the number of people in this model. Depending on your number of participants, the number of event days, schedule, and the number of boats to be allocated are specially planned and scaled for you.",
+  
+  "faq-q2-question": "Do we need to bring the boat and sailing equipment?",
+  "faq-q2-answer": "No, whether you participate in the Corporate Cup or the Internal Company Sailing Cup, all boats, gear, and safety equipment such as life jackets for the race are provided by our organization. You only need to arrive in sportswear and non-slip sports shoes that allow you to move comfortably on the boat.",
+  
+  "faq-q3-question": "No one on our team knows how to sail. Can we still participate?",
+  "faq-q3-answer": "Absolutely. Participants do not need to have any maritime or sailing experience. A professional and licensed helmsman is assigned to each boat by our organization. Your captain will guide you in real-time on what to do and ensure you race safely.",
+  
+  "faq-q4-question": "Are the races safe? Is there any risk?",
+  "faq-q4-answer": "Safety is our top priority. The race course is established in a completely controlled area, and professional security boats and medical teams remain on standby at sea throughout the race.",
+  
+  "faq-q5-question": "How many people make up a team? Is there a limit to the number of participants per company?",
+  "faq-q5-answer-intro": "Since the races are boat-based, each boat crew consists of exactly 3 people (the helmsman is not included in this number).",
+  "faq-q5-list1-title": "In the Corporate Sailing Cup:",
+  "faq-q5-list1-desc": "Within the total event quota of 46 people, you can participate by forming as many 3-person teams from your company as you wish.",
+  "faq-q5-list2-title": "In the Internal Company Sailing Cup:",
+  "faq-q5-list2-desc": "Depending on the size of your company, the number of these 3-person teams and the number of boats are increased according to your needs to establish a customized fleet.",
+  
+  "faq-q6-question": "Is it just racing, or what awaits us on land?",
+  "faq-q6-answer-p1": "The Sailing Cup is not just a race; it is also a corporate festival. Between and after the races, DJ performances, live broadcasts, refreshments, and fantastic social areas await you at the exclusive onshore facilities of the Gülbahçe Sailing Club.",
+  "faq-q6-answer-p2": "(For Internal Company events, activities in these areas can be fully customized according to your corporate culture.)",
+  
+  "faq-q7-question": "Are accommodation and transportation included in the organization package?",
+  "faq-q7-answer": "No, accommodation and transportation are not included in our standard event package. Our standard package covers race participation, boat allocation, helmsman support, and all-day food, beverage, and entertainment activities on land. However, upon request, we can gladly organize all your accommodation and transfer processes on your behalf for an additional fee.",
+  
+  "faq-q8-question": "When and where exactly will the event take place?",
+  "faq-q8-answer-p1": "Our organizations take place at the",
+  "faq-q8-answer-bold": "Urla Gülbahçe Sailing Club",
+  "faq-q8-answer-p2": ", where wind and nature harmonize perfectly. For the Corporate Sailing Cup, our event calendar is updated periodically; you can check the current availability via the calendar on our website. For Internal Company Sailing Cup requests, the dates are determined through mutual discussion to suit your schedule perfectly."
 }

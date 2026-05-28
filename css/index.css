@@ -932,7 +932,7 @@
 
 .packages-section {
   width: 100%;
-  background-color: #f1f8e7;
+  background-color: #1c4425;
   padding: 100px 20px;
 }
 .packages-section .packages-container {
@@ -949,13 +949,14 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #1c4425;
+  color: #f1f8e7;
   margin-bottom: 15px;
 }
 .packages-section .packages-header h2 {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: -1.5px;
+  color: #f1f8e7;
 }
 .packages-section .packages-grid {
   display: flex;
@@ -964,11 +965,11 @@
 }
 .packages-section .package-card {
   flex: 1;
-  background-color: #1c4425;
+  background-color: #f1f8e7;
   border-radius: 40px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: none;
 }
 .packages-section .package-card:hover {
   transform: translateY(-12px);
@@ -996,7 +997,7 @@
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #f9f9f9;
+  color: #1c4425;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 15px;
@@ -1004,29 +1005,29 @@
 .packages-section .package-card .card-body h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #f9f9f9;
+  color: #1c4425;
   margin-bottom: 15px;
   line-height: 1.2;
 }
 .packages-section .package-card .card-body p {
   font-size: 1.05rem;
-  color: #f1f8e7;
+  color: #1c4425;
   line-height: 1.6;
   margin-bottom: 30px;
 }
 .packages-section .package-card .card-body .btn-outline {
   display: inline-block;
   padding: 14px 28px;
-  border: 2px solid #f9f9f9;
-  color: #f9f9f9;
+  border: 2px solid #1c4425;
+  color: #1c4425;
   text-decoration: none;
   font-weight: 700;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .packages-section .package-card .card-body .btn-outline:hover {
-  background-color: #f9f9f9;
-  color: #1c4425;
+  background-color: #1c4425;
+  color: #f1f8e7;
 }
 @media screen and (max-width: 992px) {
   .packages-section .packages-grid {
@@ -1050,5 +1051,146 @@
   }
   .packages-section .card-body h3 {
     font-size: 1.5rem;
+  }
+}
+
+.faq-section {
+  background-color: #f1f8e7;
+  padding: 80px 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+.faq-section .faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+.faq-section .faq-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #1c4425;
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.faq-section .faq-subtitle {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  color: #46664e;
+  text-align: center;
+  margin-bottom: 48px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.faq-section .faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-section .faq-item {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  border: 1px solid rgba(70, 102, 78, 0.1);
+  box-shadow: 0 2px 8px rgba(28, 68, 37, 0.04);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq-section .faq-item:hover {
+  border-color: rgba(255, 92, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(28, 68, 37, 0.08);
+  transform: translateY(-2px);
+}
+.faq-section .faq-item.active {
+  border-color: #00b4d8;
+  box-shadow: 0 4px 16px rgba(0, 180, 216, 0.1);
+}
+.faq-section .faq-item.active .faq-question {
+  color: #ff5c00;
+}
+.faq-section .faq-item.active .faq-question .faq-icon {
+  transform: rotate(180deg);
+  color: #ff5c00;
+}
+.faq-section .faq-item.active .faq-answer {
+  grid-template-rows: 1fr;
+}
+.faq-section .faq-item.active .faq-answer-content {
+  opacity: 1;
+  padding: 0 24px 24px 24px;
+}
+.faq-section .faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  border: none;
+  padding: 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1c4425;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.faq-section .faq-question span {
+  padding-right: 20px;
+  line-height: 1.4;
+}
+.faq-section .faq-question .faq-icon {
+  width: 24px;
+  height: 24px;
+  color: #46664e;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.faq-section .faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease-in-out;
+}
+.faq-section .faq-answer-content {
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 24px 0 24px;
+  transition: opacity 0.35s ease-in-out, padding 0.35s ease-in-out;
+  color: #46664e;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.faq-section .faq-answer-content p {
+  margin: 0 0 12px 0;
+}
+.faq-section .faq-answer-content p:last-child {
+  margin-bottom: 0;
+}
+.faq-section .faq-answer-content strong {
+  color: #1c4425;
+  font-weight: 600;
+}
+.faq-section .faq-answer-content ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+.faq-section .faq-answer-content ul li {
+  margin-bottom: 8px;
+}
+.faq-section .faq-answer-content ul li:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 16px;
+  }
+  .faq-section .faq-item {
+    border-radius: 8px;
+  }
+  .faq-section .faq-question {
+    padding: 18px;
+    font-size: 1rem;
+  }
+  .faq-section .faq-question .faq-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .faq-section .faq-item.active .faq-answer-content {
+    padding: 0 18px 18px 18px;
   }
 }/*# sourceMappingURL=index.css.map */
