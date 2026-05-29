@@ -51,46 +51,62 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         color: $white;
         text-align: center;
 
+        // --- YENİ: Üst Bilgi Rozeti (Badge) ---
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15); // Saydam şık bir arka plan
+            border: 1px solid rgba(255, 255, 255, 0.4); // İnce ve zarif çerçeve
+            backdrop-filter: blur(5px); // Arka planı hafifçe flulaştıran cam efekti
+            padding: 8px 24px;
+            border-radius: 50px; // Yuvarlak hap görünümü
+            font-size: 0.9rem; // Başlığı ezmemesi için daha küçük punto
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px; // Başlık ile arasına boşluk
+            opacity: 1; // Alttaki genel 'p' ayarını ezer
+
+            // Genel p etiketinin max-width ayarından etkilenmemesi için
+            max-width: fit-content;
+        }
+
         h1 {
             font-size: 4rem;
             font-weight: 800;
             line-height: 1.1;
-            letter-spacing: -1px;
+            letter-spacing: 1px;
             margin-bottom: 16px;
         }
 
-        p {
+        // Genel (Alttaki) Açıklama Paragrafı
+        p:not(.hero-badge) {
             font-size: 1.25rem;
             font-weight: 400;
             opacity: 0.9;
             margin-bottom: 32px;
-            max-width: 600px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        // --- Yeni Eklenen Responsive Kapsayıcı ---
+        // Butonlar
         .hero-buttons {
             display: flex;
-            justify-content: center; // Masaüstünde butonları ortalar
+            justify-content: center;
             align-items: center;
-            gap: 16px; // Butonlar arası boşluk
+            gap: 16px;
 
             @media screen and (max-width: 850px) {
-                flex-direction: column-reverse; // Mobilde butonları alt alta dizer
-                gap: 12px; // Mobilde biraz daha az boşluk
-
+                flex-direction: column-reverse;
+                gap: 12px;
             }
         }
 
-        // Birinci Buton (Turuncu - Ana Odak)
         .btn-primary {
             background-color: $orange;
             color: $white;
             transition: all 0.3s ease-in-out;
-            max-width: 180px;
-            width: 100%; // Kapsayıcı içinde düzgün durması için
-            display: block; // Linklerin max-width alabilmesi için gerekli olabilir
+            padding: 14px;
+            display: block;
 
             &:hover {
                 background-color: $white;
@@ -98,22 +114,19 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             }
         }
 
-        // İkinci Buton (Yeşil - Çarpıcı Alternatif)
         .btn-secondary {
             background-color: $light-blue;
-            color: $white; // Yeşil arka planda beyaz okunmayabileceği için koyu yeşil kullanıyoruz
+            color: $white;
             transition: all 0.3s ease-in-out;
-            max-width: 180px;
-            padding: 12px;
+            padding: 14px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
-            transition: all 0.3s ease-in-out;
 
             &:hover {
                 background-color: $white;
-                color: $olive-green; // Hover durumunda yine paletinden uyumlu bir renk
+                color: $olive-green;
             }
         }
     }
@@ -124,13 +137,20 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         padding-bottom: 50px;
 
         .hero-content {
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 6px 16px;
+                margin-bottom: 16px;
+            }
+
             h1 {
                 font-size: 2.5rem;
             }
 
-            p {
+            p:not(.hero-badge) {
                 font-size: 1rem;
                 margin-bottom: 24px;
+                max-width: 600px;
             }
         }
     }
@@ -1155,7 +1175,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Paketlerimiz Bölümü (Packages Section) ---
 .packages-section {
     width: 100%;
-    background-color: $dark-green; // Hafif gri zemin
+    background-color: $light-green; // Hafif gri zemin
     padding: 100px 20px;
 
     .packages-container {
@@ -1173,7 +1193,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: $light-green;
+            color: $dark-green;
             margin-bottom: 15px;
         }
 
@@ -1181,7 +1201,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 3rem;
             font-weight: 800;
             letter-spacing: -1.5px;
-            color: $light-green;
+            color: $dark-green;
         }
     }
 
@@ -1190,18 +1210,20 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         gap: 40px;
         justify-content: center;
+        align-items: stretch; // Kartların boylarını eşitler
     }
 
     .package-card {
         flex: 1;
-        background-color: $light-green; // Beyaz kart zemini
+        display: flex;
+        flex-direction: column;
+        background-color: $dark-green;
         border-radius: 40px;
         overflow: hidden;
         transition: $transition;
         border: none;
 
         &:hover {
-            transform: translateY(-12px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
         }
 
@@ -1223,64 +1245,216 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .card-body {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
             padding: 40px;
-
-            .package-badge {
-                display: inline-block;
-                font-size: 0.85rem;
-                font-weight: 700;
-                color: $dark-green;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                margin-bottom: 15px;
-            }
 
             h3 {
                 font-size: 1.8rem;
                 font-weight: 800;
-                color: $dark-green;
+                color: $light-green;
                 margin-bottom: 15px;
                 line-height: 1.2;
             }
 
             p {
                 font-size: 1.05rem;
-                color: $dark-green;
+                color: $light-green;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
 
-            // Kart içindeki buton tasarımı
+            // --- YENİ JS UYUMLU AKORDEON TASARIMI ---
+            .faq-accordion {
+                margin-bottom: 30px;
+                background-color: rgba($light-green, 0.05);
+                border: 1px solid rgba($light-green, 0.2);
+                border-radius: 12px;
+                overflow: hidden;
+
+                .faq-summary {
+                    padding: 15px 20px;
+                    font-size: 1.05rem;
+                    font-weight: 700;
+                    color: $light-green;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    user-select: none;
+                    transition: background-color 0.3s ease;
+
+                    &:hover {
+                        background-color: rgba($light-green, 0.1);
+                    }
+
+                    .icon {
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        transition: transform 0.4s ease-in-out;
+                    }
+                }
+
+                // JS ile manipüle edilecek sarıcı div
+                .faq-content-wrapper {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.4s ease-in-out; // Kartın da yumuşak esnemesini sağlayan kilit nokta
+                }
+
+                .faq-content {
+                    padding: 0 20px 20px 20px;
+                    border-top: 1px solid rgba($light-green, 0.1);
+
+                    .faq-desc {
+                        font-size: 0.95rem;
+                        margin-bottom: 20px;
+                        padding-top: 15px;
+                    }
+
+                    .calendar-table {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+
+                        // YENİ EKLENEN: Sadece "two-cols" class'ı alan tablolarda 2 sütun (2fr 1fr) yapısını zorlar
+                        &.two-cols {
+
+                            .calendar-header,
+                            .calendar-row {
+                                grid-template-columns: 2fr 1fr;
+                            }
+                        }
+
+                        .calendar-header {
+                            display: grid;
+                            grid-template-columns: 1fr 1.5fr 1fr; // Varsayılan 3 sütun ayarı
+                            font-weight: 700;
+                            color: rgba($light-green, 0.6);
+                            font-size: 0.85rem;
+                            text-transform: uppercase;
+                            border-bottom: 1px solid rgba($light-green, 0.2);
+                            padding-bottom: 8px;
+                        }
+
+                        .calendar-row {
+                            display: grid;
+                            grid-template-columns: 1fr 1.5fr 1fr; // Varsayılan 3 sütun ayarı
+                            font-size: 0.95rem;
+                            color: $light-green;
+                            align-items: center;
+
+                            .status-warning {
+                                color: #ffb74d;
+                                font-weight: 700;
+                            }
+
+                            .status-available {
+                                color: #81c784;
+                                font-weight: 700;
+                            }
+
+                            // YENİ EKLENEN RENKLER
+                            .status-option {
+                                color: #ffa726; // Opsiyonlandı (Koyu Turuncu)
+                                font-weight: 700;
+                            }
+
+                            .status-reserved {
+                                color: #ef5350; // Rezerve Edildi (Kırmızı)
+                                font-weight: 700;
+                            }
+                        }
+
+                        // ==========================================
+                        // --- MOBİL İÇİN YATAY KAYDIRMA (SCROLL) ---
+                        // ==========================================
+                        @media screen and (max-width: 768px) {
+                            display: block; // Flex yapısını bozup taşmaya (overflow) izin veriyoruz
+                            overflow-x: auto;
+                            overflow-y: hidden;
+                            -webkit-overflow-scrolling: touch; // iOS için akıcı kaydırma
+                            padding-bottom: 15px; // Scrollbar'ın içeriğe binmemesi için boşluk
+
+                            // Scrollbar Tasarımı
+                            &::-webkit-scrollbar {
+                                height: 6px;
+                            }
+
+                            &::-webkit-scrollbar-track {
+                                background: rgba($light-green, 0.1);
+                                border-radius: 10px;
+                            }
+
+                            &::-webkit-scrollbar-thumb {
+                                background: rgba($light-green, 0.5);
+                                border-radius: 10px;
+
+                                &:hover {
+                                    background: rgba($light-green, 0.8);
+                                }
+                            }
+
+                            // İçeriklerin ezilmesini engelleyen minimum genişlik
+                            .calendar-header,
+                            .calendar-row {
+                                min-width: 480px; // 3 sütun için min genişlik
+                                margin-bottom: 8px;
+                            }
+
+                            &.two-cols {
+
+                                .calendar-header,
+                                .calendar-row {
+                                    min-width: 350px; // 2 sütun için min genişlik
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // JS tarafından eklenecek "Açık" durumu
+                &.is-open {
+                    .faq-summary .icon {
+                        transform: rotate(135deg); // İkon çarpı olur
+                    }
+                }
+            }
+
+            // --- AKORDEON BİTİŞ ---
+
             .btn-outline {
                 display: inline-block;
+                align-self: flex-start;
+                margin-top: auto; // Buton hizalamasını koruyan kod
                 padding: 14px 28px;
-                border: 2px solid $dark-green;
-                color: $dark-green;
+                border: 2px solid $light-green;
+                color: $light-green;
                 text-decoration: none;
                 font-weight: 700;
                 border-radius: 12px;
                 transition: $transition;
 
                 &:hover {
-                    background-color: $dark-green;
-                    color: $light-green;
+                    background-color: $light-green;
+                    color: $dark-green;
                 }
             }
         }
     }
 
-    // ==========================================
-    // --- MOBİL UYUMLULUK (RESPONSIVE) ---
-    // ==========================================
+    // --- MOBİL UYUMLULUK ---
     @media screen and (max-width: 992px) {
         .packages-grid {
-            flex-direction: column; // Mobilde alt alta
+            flex-direction: column;
             gap: 30px;
         }
 
         .package-card {
             max-width: 500px;
-            margin: 0 auto; // Mobilde ortala
+            width: 100%;
+            margin: 0 auto;
         }
 
         .packages-header h2 {

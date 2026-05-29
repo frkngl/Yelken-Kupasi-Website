@@ -96,12 +96,169 @@
     <section id="home" class="hero-section">
         <img src="image/image1.jpg" alt="Yelken Kupası Ana Resmi" class="hero-image">
         <div class="hero-content">
-            <h1 data-i18n="hero_title">Şirketler Arası Yelken Yarışı</h1>
-            <p data-i18n="hero_desc">Türkiye'nin ilk şirketlerarası yelken yarışı | 3 gün, 16 takım, saf rekabet</p>
+            <!-- Üstteki yazıya 'hero-badge' sınıfı eklendi -->
+            <p class="hero-badge" data-i18n="hero_desc_top">Her katılımcı federasyon onaylı bir eğitim sertifikası alır
+                ve gerçek bir yarışta yarışır.</p>
+
+            <h1 data-i18n="hero_title">Bu Yaz Ekibinizin Hikayesi <br> Denizde Başlasın</h1>
+
+            <p data-i18n="hero_desc">Rüzgar ve rekabet bir arada. Ekibinizi ofisin dışında, hayatınızda bir kez
+                yaşayacağınız bir deneyimle buluşturun. Yelken bilmenize gerek yok, her takıma lisanslı bir dümenci
+                eşlik eder.</p>
+
             <div class="hero-buttons">
-                <a href="contact.html#register" class="btn-primary" data-i18n="hero_btn">Takımınızı Kaydedin</a>
-                <a href="sailing-race-dates-and-prices.html" class="btn-secondary" data-i18n="hero_btn_2">Yelken Yarışı
-                    Tarihleri</a>
+                <a href="#packages" class="btn-primary" data-i18n="hero_btn">Şirketler Arası Yarış Eğitimi</a>
+                <a href="#packages" class="btn-secondary" data-i18n="hero_btn_2">Şirket İçi Yarış Eğitimi</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="packages-section">
+        <div class="packages-container">
+            <div class="packages-header">
+                <span class="section-subtitle" data-i18n="pkg_subtitle">Paketlerimiz</span>
+                <h2 data-i18n="pkg_title">Size Uygun Formatı Seçin</h2>
+            </div>
+
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="card-image"><img src="image/image3.jpg" alt="Takım Paketi"></div>
+                    <div class="card-body">
+                        <h3 data-i18n="pkg1_title">Şirketler Arası Yarış Eğitimi</h3>
+                        <p data-i18n="pkg1_desc">Farklı şirketler aynı parkurda buluşur, sektörel networking ile rekabet
+                            bir arada ilerler. Etkinlik her ayın son haftası Cuma, Cumartesi ve Pazar olmak üzere üç gün
+                            sürer. Takımınızı kurarsınız, dilerseniz şirketinizden birden fazla takımla
+                            katılabilirsiniz.</p>
+
+                        <div class="faq-accordion">
+                            <div class="faq-summary">
+                                Yarış Takvimini Görüntüle
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="faq-content-wrapper">
+                                <div class="faq-content">
+                                    <p class="faq-desc">Diğer şirketlerle aynı parkurda yarışmak için size uygun ayı
+                                        seçin. Her etkinlik 16 takım, toplam 48 kişiyle sınırlıdır.</p>
+                                    <div class="calendar-table">
+                                        <div class="calendar-header">
+                                            <span>Ay</span>
+                                            <span>Tarih</span>
+                                            <span>Durum</span>
+                                        </div>
+                                        <div class="calendar-row">
+                                            <span data-label="Ay:">Haziran</span>
+                                            <span data-label="Tarih:">26 - 27 - 28 Haziran</span>
+                                            <span data-label="Durum:" class="status-warning">Son 8 takım!</span>
+                                        </div>
+                                        <div class="calendar-row">
+                                            <span data-label="Ay:">Temmuz</span>
+                                            <span data-label="Tarih:">24 - 25 - 26 Temmuz</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+                                        <div class="calendar-row">
+                                            <span data-label="Ay:">Ağustos</span>
+                                            <span data-label="Tarih:">28 - 29 - 30 Ağustos</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+                                        <div class="calendar-row">
+                                            <span data-label="Ay:">Eylül</span>
+                                            <span data-label="Tarih:">25 - 26 - 27 Eylül</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank" class="btn-outline"
+                            data-i18n="btn_register_5">Kayıt Ol</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="card-image"><img src="image/image4.jpg" alt="Kurumsal Paket"></div>
+                    <div class="card-body">
+                        <h3 data-i18n="pkg2_title">Şirket İçi Yarış Eğitimi</h3>
+                        <p data-i18n="pkg2_desc">Organizasyon tamamen şirketinize özel, kapalı devre düzenlenir. Kişi
+                            sınırı bulunmaz. Katılımcı sayınıza göre gün sayısı, program ve tekne adedi size özel
+                            projelendirilir. Tarihi her ayın ilk üç haftasından birlikte belirleriz.</p>
+
+                        <div class="faq-accordion">
+                            <div class="faq-summary">
+                                Müsait Tarihleri Görüntüle
+                                <span class="icon">+</span>
+                            </div>
+                            <div class="faq-content-wrapper">
+                                <div class="faq-content">
+                                    <p class="faq-desc">Şirketinize özel, kapalı bir etkinlik için her ayın ilk üç
+                                        haftasından size uygun haftayı seçin. Kesin tarihi birlikte netleştirmek için
+                                        talep formunu doldurunuz.</p>
+
+                                    <div class="calendar-table two-cols">
+
+                                        <div class="calendar-header">
+                                            <span>Müsait Tarihler</span>
+                                            <span>Durum</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">1 Temmuz - 5 Temmuz</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">8 Temmuz - 12 Temmuz</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">15 Temmuz - 19 Temmuz</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">29 Temmuz - 2 Ağustos</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">5 Ağustos - 9 Ağustos</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">12 Ağustos - 16 Ağustos</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">19 Ağustos - 23 Ağustos</span>
+                                            <span data-label="Durum:" class="status-option">Opsiyonlandı</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">2 Eylül - 6 Eylül</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">9 Eylül - 13 Eylül</span>
+                                            <span data-label="Durum:" class="status-reserved">Rezerve Edildi</span>
+                                        </div>
+
+                                        <div class="calendar-row">
+                                            <span data-label="Tarih:">16 Eylül - 20 Eylül</span>
+                                            <span data-label="Durum:" class="status-available">Müsait</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank" class="btn-outline"
+                            data-i18n="pkg2_btn">Teklif Al</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -112,10 +269,19 @@
             <img src="image/image2.jpg" alt="Camp Activity" class="circle-img left-2">
 
             <div class="intro-content">
-                <h2 data-i18n="intro_title">Şirketler Arası Yelken Kupası'nda Yerinizi Alın</h2>
-                <p data-i18n="intro_desc">Şirketleri için tasarlanan bu 3 günlük yelken yarışında ekibinizle rekabet
-                    edin, rakiplerinizle tanışın, unutulmaz bir deneyim yaşayın.</p>
-                <a href="contact.html#register" class="btn-primary" data-i18n="btn_register_2">Kayıt Ol</a>
+                <h2 data-i18n="intro_title">Her Şey Hazır, Siz Sadece Gelin</h2>
+                <p data-i18n="intro_desc">Tüm tekneler, donanım ve güvenlik ekipmanı organizasyon tarafından sağlanır.
+                    <br>
+                    Her takıma lisanslı bir dümenci eşlik eder, gün boyu ikram sunulur, DJ ve sosyal alan sizi karşılar.
+                    Denizde güvenlik botları ile sağlık ekibi sürekli hazır bekler.
+                    <br>
+                    Siz yalnızca rahat bir spor kıyafet ve kaymaz tabanlı spor ayakkabı getirirsiniz.
+                    <br>
+                    Konaklama ile ulaşım standart pakete dahil edilmez, talep ederseniz sizin adınıza ek ücretle
+                    organize edilir.
+                </p>
+                <a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank" class="btn-primary"
+                    data-i18n="btn_register_2">Kayıt Ol</a>
             </div>
 
             <img src="image/image3.jpg" alt="Camp Activity" class="circle-img right-1">
@@ -162,7 +328,7 @@
                 <div class="sticky-content">
                     <div class="process-header">
                         <span class="section-subtitle" data-i18n="process_subtitle">Kayıt Süresi</span>
-                        <h2 data-i18n="process_title">Kayıttan Kupaya</h2>
+                        <h2 data-i18n="process_title">Kayıttan Sertifikaya</h2>
                     </div>
 
                     <div class="timeline-container">
@@ -177,9 +343,10 @@
                                     </svg>
                                 </div>
                                 <h4 data-i18n="step1_label">Adım 1</h4>
-                                <h3 data-i18n="step1_title">Online Kayıt Ol</h3>
-                                <p data-i18n="step1_desc">Şirketinizi ve takımınızı kolayca kaydedin. 12 saat içerisinde
-                                    sizinle iletişime geçelim.</p>
+                                <h3 data-i18n="step1_title">Online Kayıt Olun</h3>
+                                <p data-i18n="step1_desc">Şirketinizi birkaç dakikada kaydedersiniz. 12 saat içinde
+                                    ekibimiz size geri dönecektir. Hızlı bilgi almak için WhatsApp üzerinden bizimle
+                                    iletişim kurabilirsiniz..</p>
                             </div>
 
                             <div class="step-item">
@@ -189,9 +356,10 @@
                                     </svg>
                                 </div>
                                 <h4 data-i18n="step2_label">Adım 2</h4>
-                                <h3 data-i18n="step2_title">Yarışa Hazırlan</h3>
-                                <p data-i18n="step2_desc">Yarış kuralları ve parkur bilgisi, yarıştan 1 hafta önce tüm
-                                    takımlara iletilecektir.</p>
+                                <h3 data-i18n="step2_title">Hazırlanınn</h3>
+                                <p data-i18n="step2_desc">Yarış kuralları ve parkur bilgisi etkinlikten bir hafta önce
+                                    size ulaşır. Detaylı yelken eğitimini ise etkinliğin ilk günü sabahı, profesyonel
+                                    eğitimcilerden alırsınız.</p>
                             </div>
 
                             <div class="step-item">
@@ -201,9 +369,10 @@
                                     </svg>
                                 </div>
                                 <h4 data-i18n="step3_label">Adım 3</h4>
-                                <h3 data-i18n="step3_title">Yarışa Başla</h3>
-                                <p data-i18n="step3_desc">3 gün boyunca toplam 36 yarış yapılır. Her yarış 20-30 dakika
-                                    sürer.</p>
+                                <h3 data-i18n="step3_title">Yarış Başlıyor</h3>
+                                <p data-i18n="step3_desc">Her gün onlarca yarış yapılır, her yarış 20-30 dakika sürer.
+                                    Yarış süresi rüzgar hızına bağlıdır. Bir tekne rakibinin teknesinden daha fazla
+                                    rüzgara maruz kalırsa yarış tekrarlanır.</p>
                             </div>
 
                             <div class="step-item">
@@ -213,9 +382,9 @@
                                     </svg>
                                 </div>
                                 <h4 data-i18n="step4_label">Adım 4</h4>
-                                <h3 data-i18n="step4_title">Kupayı Kaldır</h3>
-                                <p data-i18n="step4_desc">Pazar 16:00'da ödül töreni ve kutlama etkinliğiyle yarışı
-                                    taçlandırın.</p>
+                                <h3 data-i18n="step4_title">Sertifika ve Ödül</h3>
+                                <p data-i18n="step4_desc">Etkinliğin son günü sertifikanız teslim edilir, ödül töreni ve
+                                    kutlama ile yarış taçlanır.</p>
                             </div>
                         </div>
                     </div>
@@ -326,39 +495,6 @@
             </div>
             <div class="early-reg-footer">
                 <a href="contact.html#register" class="btn-primary" data-i18n="btn_register_4">Hemen Kayıt Ol</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="packages" class="packages-section">
-        <div class="packages-container">
-            <div class="packages-header">
-                <span class="section-subtitle" data-i18n="pkg_subtitle">Paketlerimiz</span>
-                <h2 data-i18n="pkg_title">Size En Uygun Yarış Paketini Seçin</h2>
-            </div>
-
-            <div class="packages-grid">
-                <div class="package-card">
-                    <div class="card-image"><img src="image/image3.jpg" alt="Takım Paketi"></div>
-                    <div class="card-body">
-                        <span class="package-badge" data-i18n="pkg1_badge">Takım Paketi</span>
-                        <h3 data-i18n="pkg1_title">Takımınızı Kurun Yarışa Girin</h3>
-                        <p data-i18n="pkg1_desc">Her takım 3 kişiden oluşur. Şirketinizden birden fazla takım
-                            gönderebilirsiniz.</p>
-                        <a href="contact.html#register" class="btn-outline" data-i18n="btn_register_5">Kayıt Ol</a>
-                    </div>
-                </div>
-
-                <div class="package-card">
-                    <div class="card-image"><img src="image/image4.jpg" alt="Kurumsal Paket"></div>
-                    <div class="card-body">
-                        <span class="package-badge" data-i18n="pkg2_badge">Kurumsal Paket</span>
-                        <h3 data-i18n="pkg2_title">Yarışı Şirketiniz için Özelleştirelim</h3>
-                        <p data-i18n="pkg2_desc">Yarışmayı tamamen şirketinize özel düzenleyelim. 16 takım, 3 gün, tam
-                            kurumsal deneyim. Atıştırmalıklar ve DJ dahil.</p>
-                        <a href="contact.html#register" class="btn-outline" data-i18n="pkg2_btn">Teklif Al</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -623,6 +759,7 @@
     <script defer src="js/modals.js"></script>
     <script defer src="js/mail.js"></script>
     <script defer src="js/faq.js"></script>
+
 </body>
 
 </html>

@@ -1,30 +1,57 @@
-// Tüm akordeonları kapsayan tek bir ana elemanı seçiyoruz
-const faqContainer = document.querySelector('.faq-accordion');
+document.addEventListener("DOMContentLoaded", () => {
+    // Performans için sayfaya TEK BİR 'click' dinleyicisi ekliyoruz
+    document.addEventListener("click", (e) => {
 
-// Sayfada bu alan varsa kodu çalıştır (hata vermemesi için güvenlik önlemi)
-if (faqContainer) {
-    // Sadece ana kapsayıcıya TEK BİR event listener ekliyoruz
-    faqContainer.addEventListener('click', (e) => {
-
-        // Tıklanan yerin bir soru butonu (veya butonun içindeki span/svg) olup olmadığını kontrol et
+        // ========================================================
+        // SENARYO 1: ESKİ FAQ YAPISI (.faq-question Tıklandığında)
+        // ========================================================
         const questionButton = e.target.closest('.faq-question');
 
-        // Eğer tıklanan yer buton değilse boşluksa işlemi iptal et
-        if (!questionButton) return;
+        if (questionButton) {
+            // Tıklanan butonun ana kutusunu bul
+            const currentItem = questionButton.closest('.faq-item');
+            if (!currentItem) return;
 
-        // Tıklanan butonun ait olduğu ana kutuyu (faq-item) bul
-        const currentItem = questionButton.closest('.faq-item');
-        const isActive = currentItem.classList.contains('active');
+            // Güvenlik: Sadece aynı gruptaki açık öğeleri kapatmak için kapsayıcıyı bul
+            const faqContainer = currentItem.closest('.faq-accordion') || document;
 
-        // Sadece 'açık olan' akordeonları bul ve kapat (Tüm DOM'u taramak yerine sadece aktifleri tarar)
-        const activeItems = faqContainer.querySelectorAll('.faq-item.active');
-        activeItems.forEach(item => {
-            if (item !== currentItem) {
-                item.classList.remove('active');
+            // Açık olan diğer öğeleri kapat
+            const activeItems = faqContainer.querySelectorAll('.faq-item.active');
+            activeItems.forEach(item => {
+                if (item !== currentItem) {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Tıklanan öğeyi aç/kapat
+            currentItem.classList.toggle('active');
+
+            // Senaryo 1 çalıştıysa kodu burada kes, aşağıya inip tarayıcıyı yorma
+            return;
+        }
+
+        // ========================================================
+        // SENARYO 2: YENİ TAKVİM YAPISI (.faq-summary Tıklandığında)
+        // ========================================================
+        const summaryButton = e.target.closest('.faq-summary');
+
+        if (summaryButton) {
+            // İlgili akordeon kartını ve içerik kutusunu bul
+            const acc = summaryButton.closest('.faq-accordion');
+            if (!acc) return;
+
+            const wrapper = acc.querySelector('.faq-content-wrapper');
+            if (!wrapper) return;
+
+            // Class durumunu değiştir
+            acc.classList.toggle("is-open");
+
+            // Gerçek yüksekliği hesaplayarak animasyonlu (yumuşak) açma/kapatma işlemi
+            if (acc.classList.contains("is-open")) {
+                wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+            } else {
+                wrapper.style.maxHeight = "0";
             }
-        });
-
-        // Tıklanan elemanın durumunu tersine çevir (açıksa kapat, kapalıysa aç)
-        currentItem.classList.toggle('active');
+        }
     });
-}
+});

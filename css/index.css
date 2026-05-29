@@ -38,19 +38,34 @@
   color: #f9f9f9;
   text-align: center;
 }
+.hero-section .hero-content .hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  opacity: 1;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
 .hero-section .hero-content h1 {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
   margin-bottom: 16px;
 }
-.hero-section .hero-content p {
+.hero-section .hero-content p:not(.hero-badge) {
   font-size: 1.25rem;
   font-weight: 400;
   opacity: 0.9;
   margin-bottom: 32px;
-  max-width: 600px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -70,8 +85,7 @@
   background-color: #ff5c00;
   color: #f9f9f9;
   transition: all 0.3s ease-in-out;
-  max-width: 180px;
-  width: 100%;
+  padding: 14px;
   display: block;
 }
 .hero-section .hero-content .btn-primary:hover {
@@ -82,13 +96,11 @@
   background-color: #00b4d8;
   color: #f9f9f9;
   transition: all 0.3s ease-in-out;
-  max-width: 180px;
-  padding: 12px;
+  padding: 14px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
-  transition: all 0.3s ease-in-out;
 }
 .hero-section .hero-content .btn-secondary:hover {
   background-color: #f9f9f9;
@@ -99,12 +111,18 @@
     height: 75vh;
     padding-bottom: 50px;
   }
+  .hero-section .hero-content .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+    margin-bottom: 16px;
+  }
   .hero-section .hero-content h1 {
     font-size: 2.5rem;
   }
-  .hero-section .hero-content p {
+  .hero-section .hero-content p:not(.hero-badge) {
     font-size: 1rem;
     margin-bottom: 24px;
+    max-width: 600px;
   }
 }
 
@@ -931,7 +949,7 @@
 
 .packages-section {
   width: 100%;
-  background-color: #1c4425;
+  background-color: #f1f8e7;
   padding: 100px 20px;
 }
 .packages-section .packages-container {
@@ -948,30 +966,32 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #f1f8e7;
+  color: #1c4425;
   margin-bottom: 15px;
 }
 .packages-section .packages-header h2 {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: -1.5px;
-  color: #f1f8e7;
+  color: #1c4425;
 }
 .packages-section .packages-grid {
   display: flex;
   gap: 40px;
   justify-content: center;
+  align-items: stretch;
 }
 .packages-section .package-card {
   flex: 1;
-  background-color: #f1f8e7;
+  display: flex;
+  flex-direction: column;
+  background-color: #1c4425;
   border-radius: 40px;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
 }
 .packages-section .package-card:hover {
-  transform: translateY(-12px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
 }
 .packages-section .package-card .card-image {
@@ -990,43 +1010,159 @@
   transform: scale(1.05);
 }
 .packages-section .package-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   padding: 40px;
-}
-.packages-section .package-card .card-body .package-badge {
-  display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #1c4425;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
 }
 .packages-section .package-card .card-body h3 {
   font-size: 1.8rem;
   font-weight: 800;
-  color: #1c4425;
+  color: #f1f8e7;
   margin-bottom: 15px;
   line-height: 1.2;
 }
 .packages-section .package-card .card-body p {
   font-size: 1.05rem;
-  color: #1c4425;
+  color: #f1f8e7;
   line-height: 1.6;
   margin-bottom: 30px;
 }
+.packages-section .package-card .card-body .faq-accordion {
+  margin-bottom: 30px;
+  background-color: rgba(241, 248, 231, 0.05);
+  border: 1px solid rgba(241, 248, 231, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-summary {
+  padding: 15px 20px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f8e7;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: background-color 0.3s ease;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-summary:hover {
+  background-color: rgba(241, 248, 231, 0.1);
+}
+.packages-section .package-card .card-body .faq-accordion .faq-summary .icon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: transform 0.4s ease-in-out;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content {
+  padding: 0 20px 20px 20px;
+  border-top: 1px solid rgba(241, 248, 231, 0.1);
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .faq-desc {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table.two-cols .calendar-header,
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table.two-cols .calendar-row {
+  grid-template-columns: 2fr 1fr;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-header {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  font-weight: 700;
+  color: rgba(241, 248, 231, 0.6);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(241, 248, 231, 0.2);
+  padding-bottom: 8px;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  font-size: 0.95rem;
+  color: #f1f8e7;
+  align-items: center;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-row .status-warning {
+  color: #ffb74d;
+  font-weight: 700;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-row .status-available {
+  color: #81c784;
+  font-weight: 700;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-row .status-option {
+  color: #ffa726;
+  font-weight: 700;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-row .status-reserved {
+  color: #ef5350;
+  font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table {
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px;
+  }
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table::-webkit-scrollbar {
+    height: 6px;
+  }
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table::-webkit-scrollbar-track {
+    background: rgba(241, 248, 231, 0.1);
+    border-radius: 10px;
+  }
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table::-webkit-scrollbar-thumb {
+    background: rgba(241, 248, 231, 0.5);
+    border-radius: 10px;
+  }
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table::-webkit-scrollbar-thumb:hover {
+    background: rgba(241, 248, 231, 0.8);
+  }
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-header,
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table .calendar-row {
+    min-width: 480px;
+    margin-bottom: 8px;
+  }
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table.two-cols .calendar-header,
+  .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table.two-cols .calendar-row {
+    min-width: 350px;
+  }
+}
+.packages-section .package-card .card-body .faq-accordion.is-open .faq-summary .icon {
+  transform: rotate(135deg);
+}
 .packages-section .package-card .card-body .btn-outline {
   display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
   padding: 14px 28px;
-  border: 2px solid #1c4425;
-  color: #1c4425;
+  border: 2px solid #f1f8e7;
+  color: #f1f8e7;
   text-decoration: none;
   font-weight: 700;
   border-radius: 12px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .packages-section .package-card .card-body .btn-outline:hover {
-  background-color: #1c4425;
-  color: #f1f8e7;
+  background-color: #f1f8e7;
+  color: #1c4425;
 }
 @media screen and (max-width: 992px) {
   .packages-section .packages-grid {
@@ -1035,6 +1171,7 @@
   }
   .packages-section .package-card {
     max-width: 500px;
+    width: 100%;
     margin: 0 auto;
   }
   .packages-section .packages-header h2 {
