@@ -1,64 +1,114 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    let scrollY = 0;
+    // --- 1. ORTAK DEĞİŞKENLER VE FONKSİYONLAR ---
+    const imageModal = document.getElementById('imageModal');
+    const expandedImg = document.getElementById('expandedImg');
 
-    function openModal(modal) {
-        if (!modal) return;
+    // Sayfa kaydırmayı kilitleme (Zıplama yapmayan modern yöntem)
+    function lockScroll() {
+        // Kaydırma çubuğunun (scrollbar) genişliğini hesapla
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 
-        // Sayfa kaydırma pozisyonunu kaydet ve body'yi sabitle
-        scrollY = window.scrollY;
-        document.body.style.position = 'fixed';
-        document.body.style.top = `-${scrollY}px`;
-        document.body.style.width = '100%';
+        // Sayfa kaydırmasını kapat ve scrollbar kaybolduğunda sayfanın sağa kaymasını engelle
         document.body.style.overflow = 'hidden';
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
 
-        // Modalı aç
+    // Sayfa kaydırma kilidini açma
+    function unlockScroll() {
+        // Body stillerini temizle, her şey normal akışına dönsün
+        document.body.style.overflow = '';
+        document.body.style.paddingRight = '';
+    }
+
+    // --- 2. STANDART MODAL FONKSİYONLARI ---
+    function openCustomModal(modal) {
+        if (!modal) return;
+        lockScroll();
         modal.classList.add('is-open');
     }
 
-    function closeModal(modal) {
+    function closeCustomModal(modal) {
         if (!modal) return;
-
-        // Modalı kapat
         modal.classList.remove('is-open');
-
-        // Body sabitliğini kaldır ve eski kaydırma pozisyonuna dön
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.overflow = '';
-        window.scrollTo(0, scrollY);
+        unlockScroll();
     }
 
+    // --- 3. RESİM MODALI (LIGHTBOX) FONKSİYONLARI ---
+    function openImageModal(imgSrc) {
+        if (!imageModal || !expandedImg) return;
+        lockScroll();
+        expandedImg.src = imgSrc;
+        // SCSS'te flex kullandığımız için burası 'flex' olmalı
+        imageModal.style.display = 'flex';
+    }
+
+    function closeImageModal() {
+        if (!imageModal) return;
+        imageModal.style.display = 'none';
+        expandedImg.src = ''; // Hafızayı temizlemek için resmi boşalt
+        unlockScroll();
+    }
+
+    // --- 4. MERKEZİ TIKLAMA (CLICK) DİNLEYİCİSİ ---
     document.addEventListener('click', (e) => {
-        // Modal açma tetikleyicisi
+        // A) Standart Modal Açma (Trigger)
         const trigger = e.target.closest('.modal-trigger');
         if (trigger) {
             e.preventDefault();
             e.stopPropagation();
             const targetModal = document.getElementById(trigger.getAttribute('data-modal'));
-            openModal(targetModal);
+            openCustomModal(targetModal);
             return;
         }
 
-        // Çarpı butonundan kapatma
+        // B) Standart Modal Kapatma (Çarpı Butonu)
         const closeBtn = e.target.closest('.close-modal');
         if (closeBtn) {
-            closeModal(closeBtn.closest('.custom-modal'));
+            closeCustomModal(closeBtn.closest('.custom-modal'));
             return;
         }
 
-        // Dış alana (arka plana) tıklayarak kapatma
+        // C) Standart Modal Kapatma (Dış Arka Plana Tıklama)
         if (e.target.classList.contains('custom-modal') && e.target.classList.contains('is-open')) {
-            closeModal(e.target);
+            closeCustomModal(e.target);
+            return;
+        }
+
+        // D) Resim Modalı Açma (Kart içindeki resimlere tıklama)
+        const cardImg = e.target.closest('.card-image img');
+        if (cardImg) {
+            e.stopPropagation();
+            openImageModal(cardImg.src);
+            return;
+        }
+
+        // E) Resim Modalı Kapatma (Çarpı Butonu .close-btn)
+        if (e.target.closest('.close-btn')) {
+            closeImageModal();
+            return;
+        }
+
+        // F) Resim Modalı Kapatma (Dış Arka Plana Tıklama)
+        if (e.target === imageModal) {
+            closeImageModal();
+            return;
         }
     });
 
-    // ESC tuşu ile kapatma
+    // --- 5. MERKEZİ KLAVYE (KEYDOWN) DİNLEYİCİSİ ---
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
+            // 1. Açıksa standart modalı kapat
             const openModal = document.querySelector('.custom-modal.is-open');
-            if (openModal) closeModal(openModal);
+            if (openModal) {
+                closeCustomModal(openModal);
+            }
+
+            // 2. Açıksa resim modalını kapat 
+            if (imageModal && imageModal.style.display === 'flex') {
+                closeImageModal();
+            }
         }
     });
 

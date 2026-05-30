@@ -163,6 +163,10 @@
             </div>
         </div>
     </section>
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <img class="modal-content" id="expandedImg" alt="Büyütülmüş Resim">
+    </div>
 
     <section id="about" class="about-section">
         <div class="about-container">
@@ -267,10 +271,53 @@
         </div>
     </section>
 
+    <section id="race-details" class="race-section">
+        <div class="race-container">
+            <div class="race-header">
+                <span class="section-subtitle" data-i18n="race_subtitle">Günlük Detaylar</span>
+                <h2 data-i18n="race_title">Yarış Detayları</h2>
+                <p class="section-desc" data-i18n="race_desc">Kamp süresince düzenlenecek olan heyecan dolu yarışların
+                    takvimini ve detaylarını aşağıda bulabilirsiniz.</p>
+            </div>
+
+            <div class="race-cards">
+                <div class="race-card">
+                    <div class="card-step" data-i18n="step1_label_card">Adım 1</div>
+                    <div class="card-content">
+                        <h3 data-i18n="race_day1_date">19 Haziran 2026</h3>
+                        <p data-i18n="race_day1_desc">Kampın ilk günü tanışma yarışları ve temel eğitim parkuru ile
+                            başlıyoruz. Ekibini kur ve hazırlıklara başla!</p>
+                    </div>
+                </div>
+
+                <div class="race-card">
+                    <div class="card-step" data-i18n="step2_label_card">Adım 2</div>
+                    <div class="card-content">
+                        <h3 data-i18n="race_day2_date">20 Haziran 2026</h3>
+                        <p data-i18n="race_day2_desc">Strateji ve hızın ön planda olduğu orta seviye parkurda, doğa ile
+                            iç içe unutulmaz bir macera seni bekliyor.</p>
+                    </div>
+                </div>
+
+                <div class="race-card">
+                    <div class="card-step" data-i18n="step3_label_card">Adım 3</div>
+                    <div class="card-content">
+                        <h3 data-i18n="race_day3_date">21 Haziran 2026</h3>
+                        <p data-i18n="race_day3_desc">Büyük final yarışı! Tüm kampın katılımıyla gerçekleşecek olan bu
+                            yarışta yeteneklerini sergile ve ödülü kap.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="race-footer">
+                <a href="contact.html#register" class="btn-primary" data-i18n="btn_register_3">Hemen Kayıt Ol</a>
+            </div>
+        </div>
+    </section>
+
     <section id="early-registration" class="early-reg-section">
         <div class="early-reg-container">
             <div class="early-reg-header">
-                <span class="section-subtitle" data-i18n="early_subtitle">Erken Kayıt</span>
+                <span class="section-subtitle" data-i18n="early_subtitle">Bir Sonraki Etkinliğe Kalan Süre</span>
                 <h2 data-i18n="early_title">2026 Sezonu Yelken Yarışını Kaçırma</h2>
             </div>
 
@@ -590,7 +637,6 @@
     <script defer src="js/modals.js"></script>
     <script defer src="js/mail.js"></script>
     <script defer src="js/faq.js"></script>
-
 </body>
 
 </html>
