@@ -115,6 +115,9 @@
     height: 75vh;
     padding-bottom: 50px;
   }
+  .hero-section .hero-content {
+    margin-bottom: -100px;
+  }
   .hero-section .hero-content p:not(.hero-badge) {
     margin-bottom: 24px;
     max-width: 600px;
