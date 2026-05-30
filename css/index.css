@@ -89,8 +89,9 @@
   background-color: #ff5c00;
   color: #f9f9f9;
   transition: all 0.3s ease-in-out;
-  padding: 14px;
+  padding: 14px 20px;
   display: block;
+  font-size: 18px;
 }
 .hero-section .hero-content .btn-primary:hover {
   background-color: #f9f9f9;
@@ -100,11 +101,11 @@
   background-color: #00b4d8;
   color: #f9f9f9;
   transition: all 0.3s ease-in-out;
-  padding: 14px;
+  padding: 14px 20px;
   border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 18px;
 }
 .hero-section .hero-content .btn-secondary:hover {
   background-color: #f9f9f9;
@@ -121,6 +122,32 @@
   .hero-section .hero-content p:not(.hero-badge) {
     margin-bottom: 24px;
     max-width: 600px;
+  }
+  .hero-section .hero-content .btn-primary {
+    background-color: #ff5c00;
+    color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    display: block;
+    font-size: 15px;
+  }
+  .hero-section .hero-content .btn-primary:hover {
+    background-color: #f9f9f9;
+    color: #1c4425;
+  }
+  .hero-section .hero-content .btn-secondary {
+    background-color: #00b4d8;
+    color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .hero-section .hero-content .btn-secondary:hover {
+    background-color: #f9f9f9;
+    color: #46664e;
   }
 }
 

@@ -112,8 +112,9 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             background-color: $orange;
             color: $white;
             transition: all 0.3s ease-in-out;
-            padding: 14px;
+            padding: 14px 20px;
             display: block;
+            font-size: 18px;
 
             &:hover {
                 background-color: $white;
@@ -125,11 +126,11 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             background-color: $light-blue;
             color: $white;
             transition: all 0.3s ease-in-out;
-            padding: 14px;
+            padding: 14px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 18px;
 
             &:hover {
                 background-color: $white;
@@ -150,6 +151,36 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             p:not(.hero-badge) {
                 margin-bottom: 24px;
                 max-width: 600px;
+            }
+
+            .btn-primary {
+                background-color: $orange;
+                color: $white;
+                transition: all 0.3s ease-in-out;
+                padding: 10px;
+                display: block;
+                font-size: 15px;
+
+                &:hover {
+                    background-color: $white;
+                    color: $dark-green;
+                }
+            }
+
+            .btn-secondary {
+                background-color: $light-blue;
+                color: $white;
+                transition: all 0.3s ease-in-out;
+                padding: 10px;
+                border-radius: 50px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 15px;
+
+                &:hover {
+                    background-color: $white;
+                    color: $olive-green;
+                }
             }
         }
     }

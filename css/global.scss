@@ -28,7 +28,7 @@ body {
 
     .whatsapp-btn {
         position: fixed;
-        // 'safe-area-inset-bottom' mobil tarayıcılarda (Safari/Chrome vb.) barlar gizlenirken zıplamayı ve taşmayı önler
+        // Masaüstü ekranlarda alttan varsayılan 30px boşluk
         bottom: calc(30px + env(safe-area-inset-bottom));
         right: 30px;
         width: 60px;
@@ -41,7 +41,7 @@ body {
         align-items: center;
         text-decoration: none;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-        z-index: 9999; // Her zaman en üstte kalması için
+        z-index: 9999;
 
         // Donanımsal ivmelendirme (GPU) sağlar. Sayfa kaydırılırken buton titremez, çakılı kalır.
         will-change: transform, bottom;
@@ -62,17 +62,20 @@ body {
     }
 
     // --- Mobil Ekran İnce Ayarı ---
-    // Küçük ekranlarda butonun çok kaba durmaması için boyutlarını ve boşluklarını dengeler
-    @media screen and (max-width: 480px) {
+    // Ekran genişliği 768px ve altı olan tüm mobil cihazlarda tetiklenir
+    @media screen and (max-width: 768px) {
         .whatsapp-btn {
-            bottom: calc(20px + env(safe-area-inset-bottom));
-            right: 20px;
-            width: 54px;
-            height: 54px;
+            // Buton yüksekliği isteğiniz üzerine dikeyde 12px'e indirilerek ekranın altına yaklaştırıldı.
+            // env(safe-area-inset-bottom) sayesinde çentikli telefonlarda ve tarayıcı barları değişirken titreme yapmaz.
+            bottom: calc(12px + env(safe-area-inset-bottom));
+            right: 15px; // Mobilde ekran kenarına daha iyi yaslanması için sağ boşluk azaltıldı
+            width: 52px; // Mobil ekranlar için buton boyutu hafifçe küçültüldü
+            height: 52px;
 
             svg {
-                width: 30px;
-                height: 30px;
+                width: 28px;
+                height: 28px;
+                margin-top: -2px;
             }
         }
     }
