@@ -401,32 +401,38 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 .process-section .process-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 80px auto;
+  margin: 0 auto clamp(20px, 5vh, 80px) auto;
+  padding: 0 15px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .process-section .process-header .section-subtitle {
   display: inline-block;
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 2vw, 1rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #f9f9f9;
-  margin-bottom: 20px;
+  margin-bottom: clamp(10px, 2vh, 20px);
 }
 .process-section .process-header h2 {
-  font-size: 3.5rem;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
   font-weight: 800;
   color: #f9f9f9;
   line-height: 1.1;
-  letter-spacing: -2px;
+  letter-spacing: -1px;
+  word-wrap: break-word;
 }
 .process-section .timeline-container {
   width: 100%;
   position: relative;
   padding: 0;
+  box-sizing: border-box;
 }
 .process-section .line-bg {
   position: absolute;
@@ -472,7 +478,7 @@
   background-color: #46664e;
   border: 4px solid #46664e;
   border-radius: 50%;
-  margin: 0 0 30px 0;
+  margin: 0 0 clamp(15px, 3vh, 30px) 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -495,41 +501,29 @@
   transform: scale(1);
 }
 .process-section .step-item h4 {
-  font-size: 1rem;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
   font-weight: 700;
   color: #f9f9f9;
   margin-bottom: 8px;
   letter-spacing: 1px;
 }
 .process-section .step-item h3 {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 800;
   color: #f9f9f9;
-  margin-bottom: 12px;
+  margin-bottom: clamp(6px, 1.5vh, 12px);
   line-height: 1.2;
+  word-wrap: break-word;
 }
 .process-section .step-item p {
-  font-size: 1.1rem;
+  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
   color: #f1f8e7;
-  line-height: 1.6;
+  line-height: 1.4;
   padding-right: 15px;
 }
 @media screen and (max-width: 850px) {
-  .process-section .process-header {
-    margin-bottom: 25px;
-    padding: 0 15px;
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .process-section .process-header h2 {
-    font-size: 1.8rem;
-    word-wrap: break-word;
-  }
   .process-section .timeline-container {
-    padding: 0 15px 25px 62px;
-    position: relative;
-    box-sizing: border-box;
-    width: 100%;
+    padding: 0 15px 15px 62px;
   }
   .process-section .line-bg {
     top: 16px;
@@ -550,7 +544,7 @@
   }
   .process-section .steps-row {
     flex-direction: column;
-    gap: 25px;
+    gap: clamp(15px, 3vh, 25px);
     text-align: left !important;
   }
   .process-section .step-item {
@@ -566,16 +560,8 @@
     top: 0;
     margin: 0 !important;
   }
-  .process-section .step-item h3 {
-    font-size: 1.2rem;
-    word-wrap: break-word;
-    margin-bottom: 8px;
-  }
   .process-section .step-item p {
-    font-size: 0.95rem;
     padding-right: 0;
-    word-wrap: break-word;
-    line-height: 1.4;
   }
 }
 
@@ -1069,6 +1055,29 @@
   margin-bottom: 20px;
   padding-top: 15px;
 }
+.packages-section .package-card .card-body .faq-accordion .faq-content .scroll-hint {
+  display: none;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 0.8rem;
+  color: rgba(241, 248, 231, 0.6);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+.packages-section .package-card .card-body .faq-accordion .faq-content .scroll-hint .arrow {
+  margin-left: 6px;
+  font-size: 1.1rem;
+  font-style: normal;
+  animation: swipeHint 1.5s infinite ease-in-out;
+}
+@keyframes swipeHint {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
 .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table {
   display: flex;
   flex-direction: column;
@@ -1112,6 +1121,9 @@
   font-weight: 700;
 }
 @media screen and (max-width: 768px) {
+  .packages-section .package-card .card-body .faq-accordion .faq-content .scroll-hint {
+    display: flex;
+  }
   .packages-section .package-card .card-body .faq-accordion .faq-content .calendar-table {
     display: block;
     overflow-x: auto;

@@ -146,6 +146,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         // Font ezmeleri clamp() ile halledildiği için sadece yapısal kutu ayarları kaldı
         .hero-content {
             margin-bottom: -100px;
+
             p:not(.hero-badge) {
                 margin-bottom: 24px;
                 max-width: 600px;
@@ -495,30 +496,38 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        overflow: hidden; // YENİ: Kendi alanından taşmayı kesin olarak engeller
     }
 
-    // --- Üst Başlık Alanı (BÜYÜTÜLDÜ) ---
+    // --- Üst Başlık Alanı ---
     .process-header {
         text-align: center;
-        max-width: 800px; // Başlık alanı genişletildi
-        margin: 0 auto 80px auto; // Alt boşluk artırıldı (80px)
+        max-width: 800px;
+        // YENİ: Alt boşluk ekran yüksekliğine göre esner (Min 20px, Max 80px)
+        margin: 0 auto clamp(20px, 5vh, 80px) auto;
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
 
         .section-subtitle {
             display: inline-block;
-            font-size: 1rem; // 0.9'dan 1'e çıktı
+            // YENİ: Font boyutu dinamikleşti
+            font-size: clamp(0.85rem, 2vw, 1rem);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: $white;
-            margin-bottom: 20px;
+            margin-bottom: clamp(10px, 2vh, 20px);
         }
 
         h2 {
-            font-size: 3.5rem; // 2.5'ten 3.5'e çıktı (Vurucu başlık)
+            // YENİ: Font boyutu dinamikleşti (Ekran daraldıkça 1.8rem'e kadar küçülür)
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             font-weight: 800;
             color: $white;
             line-height: 1.1;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
+            word-wrap: break-word; // Uzun kelimeleri kırar
         }
     }
 
@@ -527,6 +536,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         width: 100%;
         position: relative;
         padding: 0;
+        box-sizing: border-box;
     }
 
     // Arka Plandaki Gri Çizgi (Masaüstü)
@@ -540,7 +550,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1;
     }
 
-    // Dolan Siyah Çizgi (Masaüstü - Transform ScaleX ile)
+    // Dolan Siyah Çizgi (Masaüstü)
     .line-fill {
         position: absolute;
         top: 16px;
@@ -562,13 +572,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         width: 100%;
     }
 
-    // --- Adım Öğeleri (BÜYÜTÜLDÜ & SOLA YASLANDI) ---
+    // --- Adım Öğeleri ---
     .step-item {
         flex: 1;
         text-align: left;
         min-width: 0;
         padding: 0 15px;
-        margin-right: 30px; // Adımlar arası boşluk artırıldı
+        margin-right: 30px;
 
         &:last-child {
             margin-right: 0;
@@ -581,13 +591,13 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             background-color: $olive-green;
             border: 4px solid $olive-green;
             border-radius: 50%;
-            margin: 0 0 30px 0; // Alt boşluk artırıldı (30px)
+            // YENİ: Nokta ile yazı arasındaki boşluk ekran yüksekliğine göre esner
+            margin: 0 0 clamp(15px, 3vh, 30px) 0;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
 
-            // Tik İşareti (Check Icon)
             .check-icon {
                 width: 18px;
                 height: 18px;
@@ -597,7 +607,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             }
 
-            // Çizgi oraya ulaştığında tetiklenen sınıf
             &.is-reached {
                 border-color: $green;
                 background-color: $green;
@@ -610,7 +619,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         h4 {
-            font-size: 1rem; // 0.8'den 1'e çıktı
+            // YENİ: Dinamik boyut
+            font-size: clamp(0.85rem, 1.5vw, 1rem);
             font-weight: 700;
             color: $white;
             margin-bottom: 8px;
@@ -618,17 +628,20 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         h3 {
-            font-size: 1.6rem; // 1.1'den 1.6'ya çıktı
+            // YENİ: Dinamik boyut
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
             font-weight: 800;
             color: $white;
-            margin-bottom: 12px;
+            margin-bottom: clamp(6px, 1.5vh, 12px);
             line-height: 1.2;
+            word-wrap: break-word;
         }
 
         p {
-            font-size: 1.1rem; // 0.9'dan 1.1'e çıktı
+            // YENİ: Dinamik boyut
+            font-size: clamp(0.85rem, 1.5vw, 1.1rem);
             color: $light-green;
-            line-height: 1.6;
+            line-height: 1.4;
             padding-right: 15px;
         }
     }
@@ -638,30 +651,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     // ==========================================
     @media screen and (max-width: 850px) {
 
-        .process-header {
-            margin-bottom: 25px; // 40px'den düşürüldü (Dikey taşmayı engellemek için)
-            padding: 0 15px; // Yatayda ekrana yapışmayı önler
-            box-sizing: border-box; // Padding'in genişliği bozmasını engeller
-            width: 100%;
-
-            h2 {
-                font-size: 1.8rem; // Mobilde daha güvenli bir boyut (2.2rem çok uzun kelimelerde taşabilir)
-                word-wrap: break-word; // Uzun kelimelerin kutuyu kırmasını önler
-            }
-        }
-
         .timeline-container {
-            // Alt boşluğu (padding-bottom) 40px'den 10px'e düşürdük
-            padding: 0 15px 25px 62px;
-            position: relative;
-            box-sizing: border-box;
-            width: 100%;
+            // Dikey alan darlığına karşı alt boşluk minimumda tutuldu
+            padding: 0 15px 15px 62px;
         }
 
-        // Arka Plandaki Gri Çizgi (Yol)
         .line-bg {
             top: 16px;
-            bottom: 15px; // Konteynırın alt padding'i 15px olduğu için çizgi de 15px uzayacak
+            bottom: 15px;
             left: 28px;
             right: auto;
             width: 4px;
@@ -674,13 +671,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             left: 28px;
             right: auto;
             width: 4px;
-            height: 0; // JS ile px olarak artacak
+            height: 0;
             transition: height 0.1s ease-out;
         }
 
         .steps-row {
             flex-direction: column;
-            gap: 25px; // 60px çok fazlaydı! Dikey taşmanın asıl sebebi buydu, 25px'e düşürdük.
+            // YENİ: Adımlar arası dikey boşluk ekran yüksekliğine göre esner (Taşmayı önler!)
+            gap: clamp(15px, 3vh, 25px);
             text-align: left !important;
         }
 
@@ -698,17 +696,8 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 margin: 0 !important;
             }
 
-            h3 {
-                font-size: 1.2rem; // 1.3'ten biraz düşürüldü
-                word-wrap: break-word;
-                margin-bottom: 8px; // 12px'den düşürüldü
-            }
-
             p {
-                font-size: 0.95rem; // 1rem'den hafif düşürüldü
                 padding-right: 0;
-                word-wrap: break-word;
-                line-height: 1.4; // Satır arası boşluğu hafif kısıldı (dikeyden tasarruf)
             }
         }
     }
@@ -1311,12 +1300,44 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                         padding-top: 15px;
                     }
 
+                    // --- YENİ EKLENEN: Kaydırma İpucu (Masaüstünde Gizli) ---
+                    .scroll-hint {
+                        display: none; // Masaüstünde varsayılan olarak gizli
+                        align-items: center;
+                        justify-content: flex-end; // Sağ tarafa yaslar
+                        font-size: 0.8rem;
+                        color: rgba($light-green, 0.6);
+                        font-style: italic;
+                        margin-bottom: 8px;
+
+                        .arrow {
+                            margin-left: 6px;
+                            font-size: 1.1rem;
+                            font-style: normal;
+                            animation: swipeHint 1.5s infinite ease-in-out;
+                        }
+                    }
+
+                    // Ok ikonu için sağa-sola hareket animasyonu
+                    @keyframes swipeHint {
+
+                        0%,
+                        100% {
+                            transform: translateX(0);
+                        }
+
+                        50% {
+                            transform: translateX(5px);
+                        }
+                    }
+
+                    // --------------------------------------------------------
+
                     .calendar-table {
                         display: flex;
                         flex-direction: column;
                         gap: 12px;
 
-                        // YENİ EKLENEN: Sadece "two-cols" class'ı alan tablolarda 2 sütun (2fr 1fr) yapısını zorlar
                         &.two-cols {
 
                             .calendar-header,
@@ -1327,7 +1348,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
                         .calendar-header {
                             display: grid;
-                            grid-template-columns: 1fr 1.5fr 1fr; // Varsayılan 3 sütun ayarı
+                            grid-template-columns: 1fr 1.5fr 1fr;
                             font-weight: 700;
                             color: rgba($light-green, 0.6);
                             font-size: 0.85rem;
@@ -1338,7 +1359,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
                         .calendar-row {
                             display: grid;
-                            grid-template-columns: 1fr 1.5fr 1fr; // Varsayılan 3 sütun ayarı
+                            grid-template-columns: 1fr 1.5fr 1fr;
                             font-size: 0.95rem;
                             color: $light-green;
                             align-items: center;
@@ -1353,22 +1374,30 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                                 font-weight: 700;
                             }
 
-                            // YENİ EKLENEN RENKLER
                             .status-option {
-                                color: #ffa726; // Opsiyonlandı (Koyu Turuncu)
+                                color: #ffa726;
                                 font-weight: 700;
                             }
 
                             .status-reserved {
-                                color: #ef5350; // Rezerve Edildi (Kırmızı)
+                                color: #ef5350;
                                 font-weight: 700;
                             }
                         }
+                    }
 
-                        // ==========================================
-                        // --- MOBİL İÇİN YATAY KAYDIRMA (SCROLL) ---
-                        // ==========================================
-                        @media screen and (max-width: 768px) {
+                    // ==========================================
+                    // --- MOBİL İÇİN YATAY KAYDIRMA (SCROLL) ---
+                    // ==========================================
+                    @media screen and (max-width: 768px) {
+
+                        // 1. Mobilde kaydırma uyarısını görünür yap
+                        .scroll-hint {
+                            display: flex;
+                        }
+
+                        // 2. Tabloyu yatay olarak kaydırılabilir hale getir
+                        .calendar-table {
                             display: block; // Flex yapısını bozup taşmaya (overflow) izin veriyoruz
                             overflow-x: auto;
                             overflow-y: hidden;
