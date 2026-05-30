@@ -24,12 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // pathname değişmeyeceği için bir kez hesapla, closure'da tut
     const { pathname } = window.location;
 
-    // Sadece path kısmını kontrol ediyoruz (Protokol ve domain dahil edilmez)
+    // Ana sayfa kontrolleri (Fazladan boşluk düzeltildi)
     const isHomePage = pathname === '/' ||
         pathname === '/Yelken-Kupasi-Website/' ||
         pathname.endsWith('index.html');
 
-    if (header && isHomePage) {
+    // Inter-Company sayfası kontrolü (Ayrı bir sayfa olarak tanımlandı)
+    const isInterCompanyPage = pathname.endsWith('Inter-Company-Sailing-Cup.html');
+
+    // Scroll efekti hem Ana Sayfa'da hem de Inter-Company sayfasında çalışacaksa:
+    if (header && (isHomePage || isInterCompanyPage)) {
         let ticking = false;
 
         const updateHeader = () => {
