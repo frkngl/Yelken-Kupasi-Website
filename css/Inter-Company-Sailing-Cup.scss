@@ -227,24 +227,33 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden; // Resmin üst köşelerden taşmasını engeller
+            overflow: hidden; // Resmin üst köşelerden ve zoom esnasında kenarlardan taşmasını engeller
+            cursor: pointer;
 
+            // --- Kartın Üzerine Gelindiğinde (Hover Durumu) ---
             &:hover {
-                transform: translateY(-5px); // Hover durumunda hafif yukarı kalkar
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); // Gölgeyi koyu renge uygun şekilde biraz koyulaştırdık
+                transform: translateY(-5px); // Kart hafifçe yukarı kalkar
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); // Gölge koyulaşır ve derinlik kazanır
+
+                // Kart hover olduğunda içindeki resme zoom efekti uygula
+                .card-image img {
+                    transform: scale(1.1); // Resmi %10 oranında büyütür
+                }
             }
 
             // --- Kart Resim Alanı ---
             .card-image {
                 width: 100%;
-                height: 200px; // Resim alanı için sabit yükseklik (tasarıma göre değiştirebilirsin)
-                overflow: hidden;
+                height: 200px; // Resim alanı için sabit yükseklik
+                overflow: hidden; // Zoom efektinin kart sınırları içinde kalmasını sağlar
 
                 img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover; // Farklı boyuttaki resimlerin sünmeden alanı doldurmasını sağlar
                     display: block;
+                    // Resmin büyüme (zoom) efektinin pürüzsüz (akıcı) olmasını sağlayan geçiş efekti
+                    transition: transform 0.5s ease;
                 }
             }
 

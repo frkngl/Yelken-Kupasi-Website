@@ -188,10 +188,14 @@
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  cursor: pointer;
 }
 .intro-section .intro-cards .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+.intro-section .intro-cards .card:hover .card-image img {
+  transform: scale(1.1);
 }
 .intro-section .intro-cards .card .card-image {
   width: 100%;
@@ -204,6 +208,7 @@
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
 }
 .intro-section .intro-cards .card .card-body {
   padding: 30px 25px;
