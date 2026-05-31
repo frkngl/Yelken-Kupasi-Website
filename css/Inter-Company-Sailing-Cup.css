@@ -356,24 +356,6 @@
   line-height: 1.6;
   margin-bottom: 40px;
 }
-.about-section .about-content .about-features {
-  display: flex;
-  gap: 30px;
-}
-.about-section .about-content .about-features .feature-item {
-  flex: 1;
-}
-.about-section .about-content .about-features .feature-item h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f9f9f9;
-  margin-bottom: 10px;
-}
-.about-section .about-content .about-features .feature-item p {
-  font-size: 1rem;
-  color: #f1f8e7;
-  line-height: 1.5;
-}
 .about-section .about-content .about-steps {
   display: flex;
   gap: 20px;
@@ -434,10 +416,6 @@
   }
   .about-section .about-content h2 {
     font-size: 2.2rem;
-  }
-  .about-section .about-content .about-features {
-    flex-direction: column;
-    gap: 20px;
   }
   .about-section .about-content .about-steps {
     flex-direction: column;
@@ -651,7 +629,7 @@
 
 .facility-section {
   width: 100%;
-  background-color: #1c4425;
+  background-color: #f1f8e7;
   padding: 100px 20px;
 }
 .facility-section .facility-container {
@@ -674,7 +652,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #f9f9f9;
+  color: #1c4425;
   margin-bottom: 15px;
 }
 .facility-section .facility-header .header-left h2 {
@@ -682,14 +660,14 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  color: #f9f9f9;
+  color: #1c4425;
 }
 .facility-section .facility-header .header-right {
   flex: 1;
 }
 .facility-section .facility-header .header-right p {
   font-size: 1.15rem;
-  color: #f9f9f9;
+  color: #1c4425;
   line-height: 1.6;
   max-width: 500px;
 }
@@ -785,110 +763,118 @@
   }
 }
 
-.race-section {
-  width: 100%;
+.sailing-package {
   background-color: #f1f8e7;
-  padding: 100px 20px;
-}
-.race-section .race-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.race-section .race-header {
-  max-width: 700px;
-  margin: 0 auto 60px auto;
-}
-.race-section .race-header .section-subtitle {
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   color: #1c4425;
-  margin-bottom: 15px;
+  padding: 5rem 1.5rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
-.race-section .race-header h2 {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 20px;
-  letter-spacing: -1px;
+@media (max-width: 768px) {
+  .sailing-package {
+    padding: 3.5rem 1rem;
+  }
 }
-.race-section .race-header .section-desc {
-  font-size: 1.15rem;
-  color: #46664e;
-  line-height: 1.6;
-}
-.race-section .race-cards {
+.sailing-package__container {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  gap: 30px;
-  margin-bottom: 60px;
-  text-align: left;
+  flex-direction: column;
+  gap: 3.5rem;
 }
-.race-section .race-card {
-  flex: 1;
-  background-color: #1c4425;
-  padding: 40px;
-  border-radius: 30px;
-  position: relative;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
+@media (max-width: 768px) {
+  .sailing-package__container {
+    gap: 2.5rem;
+  }
 }
-.race-section .race-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+.sailing-package__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
-.race-section .race-card .card-step {
-  display: inline-flex;
+.sailing-package__title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+.sailing-package__intro {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+.sailing-package__sub-intro {
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 0.8;
+}
+.sailing-package__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  width: 100%;
+}
+.sailing-package__card {
+  background-color: rgba(28, 68, 37, 0.04);
+  border: 1px solid rgba(28, 68, 37, 0.08);
+  padding: 1.25rem 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.sailing-package__card:hover {
+  background-color: rgba(28, 68, 37, 0.07);
+  transform: translateY(-3px);
+  border-color: rgba(28, 68, 37, 0.2);
+}
+.sailing-package__icon {
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: #f9f9f9;
-  font-weight: 800;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.sailing-package__icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: #1c4425;
+}
+.sailing-package__text {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.sailing-package__note {
+  background-color: transparent;
+  border: 1px dashed rgba(28, 68, 37, 0.3);
+  padding: 1.75rem;
+  border-radius: 14px;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+.sailing-package__note-title {
   font-size: 0.9rem;
-  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
 }
-.race-section .race-card .card-content h3 {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 15px;
-  color: #f9f9f9;
+.sailing-package__note-desc {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
 }
-.race-section .race-card .card-content p {
-  font-size: 1rem;
-  color: #f1f8e7;
-  line-height: 1.6;
-}
-.race-section .race-footer {
-  display: flex;
-  justify-content: center;
-}
-.race-section .race-footer .btn-primary {
-  padding: 18px 40px;
-  font-size: 1.1rem;
-  background-color: #ff5c00;
-  color: #f9f9f9;
-  transition: all 0.3s ease-in-out;
-}
-.race-section .race-footer .btn-primary:hover {
-  background-color: #1c4425;
-  color: #f9f9f9;
-}
-@media screen and (max-width: 992px) {
-  .race-section {
-    padding: 60px 20px;
-  }
-  .race-section .race-header h2 {
-    font-size: 2.2rem;
-  }
-  .race-section .race-cards {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .race-section .race-card {
-    padding: 30px;
-  }
-  .race-section .race-card:hover {
-    transform: none;
+@media (max-width: 576px) {
+  .sailing-package__note {
+    text-align: left;
+    padding: 1.25rem;
   }
 }
 

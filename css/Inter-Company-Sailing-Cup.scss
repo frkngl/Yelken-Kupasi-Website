@@ -441,28 +441,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             margin-bottom: 40px;
         }
 
-        .about-features {
-            display: flex;
-            gap: 30px;
-
-            .feature-item {
-                flex: 1;
-
-                h3 {
-                    font-size: 1.2rem;
-                    font-weight: 700;
-                    color: $white;
-                    margin-bottom: 10px;
-                }
-
-                p {
-                    font-size: 1rem;
-                    color: $light-green;
-                    line-height: 1.5;
-                }
-            }
-        }
-
         .about-steps {
             display: flex;
             gap: 20px;
@@ -535,11 +513,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             h2 {
                 font-size: 2.2rem;
-            }
-
-            .about-features {
-                flex-direction: column;
-                gap: 20px;
             }
 
             // === MOBİL İÇİN YENİ EKLENEN KISIM ===
@@ -813,7 +786,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Tesisimiz Bölümü (Facility Section) ---
 .facility-section {
     width: 100%;
-    background-color: $dark-green; // Önceki bölüm beyazdı, burayı hafif gri yaparak ayırıyoruz
+    background-color: $light-green; // Önceki bölüm beyazdı, burayı hafif gri yaparak ayırıyoruz
     padding: 100px 20px;
 
     .facility-container {
@@ -838,7 +811,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                color: $white;
+                color: $dark-green;
                 margin-bottom: 15px;
             }
 
@@ -847,7 +820,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-weight: 800;
                 line-height: 1.1;
                 letter-spacing: -1.5px;
-                color: $white;
+                color: $dark-green;
             }
         }
 
@@ -856,7 +829,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             p {
                 font-size: 1.15rem;
-                color: $white;
+                color: $dark-green;
                 line-height: 1.6;
                 // Açıklama başlığa göre biraz daha içeride dursun
                 max-width: 500px;
@@ -976,139 +949,133 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
 
-// --- Yarış Detayları Bölümü (Race Section) ---
-.race-section {
-    width: 100%;
-    background-color: $light-green; // Beyaz arka plan (Bölümleri ayırmak için)
-    padding: 100px 20px;
+.sailing-package {
+    background-color: $light-green;
+    color: $dark-green;
+    padding: 5rem 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
-    .race-container {
-        max-width: $max-width;
+    @media (max-width: 768px) {
+        padding: 3.5rem 1rem;
+    }
+
+    &__container {
+        max-width: 1100px;
         margin: 0 auto;
-        text-align: center; // Tüm içerikleri başlangıçta ortalar
-    }
-
-    // --- Başlık Grubu ---
-    .race-header {
-        max-width: 700px;
-        margin: 0 auto 60px auto;
-
-        .section-subtitle {
-            display: inline-block;
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: $dark-green;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .section-desc {
-            font-size: 1.15rem;
-            color: $olive-green;
-            line-height: 1.6;
-        }
-    }
-
-    // --- Kartlar Alanı ---
-    .race-cards {
         display: flex;
-        gap: 30px; // Kartlar arası boşluk
-        margin-bottom: 60px;
-        text-align: left; // Kart içindeki yazıları sola yaslar
+        flex-direction: column;
+        gap: 3.5rem;
+
+        @media (max-width: 768px) {
+            gap: 2.5rem;
+        }
     }
 
-    .race-card {
-        flex: 1;
-        background-color: $dark-green; // Hafif gri kart rengi
-        padding: 40px;
-        border-radius: 30px;
-        position: relative;
-        transition: $transition;
-        border: 1px solid rgba(0, 0, 0, 0.05);
+    &__header {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-        // Üzerine gelince efekt
+    &__title {
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 800;
+        margin-bottom: 1.25rem;
+        letter-spacing: -0.02em;
+    }
+
+    &__intro {
+        font-size: clamp(1.05rem, 2vw, 1.2rem);
+        line-height: 1.7;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+    }
+
+    &__sub-intro {
+        font-size: 0.95rem;
+        font-style: italic;
+        opacity: 0.8;
+    }
+
+    // Responsive Grid Tasarımı
+    &__grid {
+        display: grid;
+        // Ekran boyutuna göre otomatik kolon sayısı belirler (min 300px genişlik)
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.25rem;
+        width: 100%;
+    }
+
+    // Modern Kart Yapısı
+    &__card {
+        background-color: rgba($dark-green, 0.04); // Şık ve yarı saydam iç arka plan
+        border: 1px solid rgba($dark-green, 0.08);
+        padding: 1.25rem 1.5rem;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        // Kartların üzerine gelince hafifçe canlanması için akıcı hover efekti
         &:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        // Sol üstteki adım numarası (01, 02...)
-        .card-step {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: $white;
-            font-weight: 800;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-        }
-
-        .card-content {
-            h3 {
-                font-size: 1.5rem;
-                font-weight: 800;
-                margin-bottom: 15px;
-                color: $white;
-            }
-
-            p {
-                font-size: 1rem;
-                color: $light-green;
-                line-height: 1.6;
-            }
+            background-color: rgba($dark-green, 0.07);
+            transform: translateY(-3px);
+            border-color: rgba($dark-green, 0.2);
         }
     }
 
-    // --- Alt Buton Alanı ---
-    .race-footer {
+    &__icon {
         display: flex;
+        align-items: center;
         justify-content: center;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0; // İkonun metin uzunluğuna göre küçülmesini engeller
 
-        .btn-primary {
-            padding: 18px 40px; // Alt butonu biraz daha büyük yaptık
-            font-size: 1.1rem;
-            background-color: $orange;
-            color: $white;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-                background-color: $dark-green;
-                color: $white;
-            }
+        svg {
+            width: 100%;
+            height: 100%;
+            stroke: $dark-green;
         }
     }
 
-    // ==========================================
-    // --- MOBİL UYUMLULUK ---
-    // ==========================================
-    @media screen and (max-width: 992px) {
-        padding: 60px 20px;
+    &__text {
+        font-size: 1.05rem;
+        font-weight: 500;
+        line-height: 1.4;
+    }
 
-        .race-header {
-            h2 {
-                font-size: 2.2rem;
-            }
+    // Dahil Olmayanlar Alanı (Modern Uyan Kutusu Tasarımı)
+    &__note {
+        background-color: transparent;
+        border: 1px dashed rgba($dark-green, 0.3);
+        padding: 1.75rem;
+        border-radius: 14px;
+        max-width: 750px;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+
+        &-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
         }
 
-        .race-cards {
-            flex-direction: column; // Mobilde kartlar alt alta
-            gap: 20px;
+        &-desc {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin: 0;
+            font-weight: 500;
         }
 
-        .race-card {
-            padding: 30px;
-
-            &:hover {
-                transform: none; // Mobilde hover kalksın
-            }
+        @media (max-width: 576px) {
+            text-align: left;
+            padding: 1.25rem;
         }
     }
 }
