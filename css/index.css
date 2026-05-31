@@ -384,7 +384,7 @@
 
 .facility-section {
   width: 100%;
-  background-color: #1c4425;
+  background-color: #f1f8e7;
   padding: 100px 20px;
 }
 .facility-section .facility-container {
@@ -407,7 +407,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #f9f9f9;
+  color: #1c4425;
   margin-bottom: 15px;
 }
 .facility-section .facility-header .header-left h2 {
@@ -415,14 +415,14 @@
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  color: #f9f9f9;
+  color: #1c4425;
 }
 .facility-section .facility-header .header-right {
   flex: 1;
 }
 .facility-section .facility-header .header-right p {
   font-size: 1.15rem;
-  color: #f9f9f9;
+  color: #1c4425;
   line-height: 1.6;
   max-width: 500px;
 }

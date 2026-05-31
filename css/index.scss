@@ -474,7 +474,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 // --- Tesisimiz Bölümü (Facility Section) ---
 .facility-section {
     width: 100%;
-    background-color: $dark-green; // Önceki bölüm beyazdı, burayı hafif gri yaparak ayırıyoruz
+    background-color: $light-green; // Önceki bölüm beyazdı, burayı hafif gri yaparak ayırıyoruz
     padding: 100px 20px;
 
     .facility-container {
@@ -499,7 +499,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                color: $white;
+                color: $dark-green;
                 margin-bottom: 15px;
             }
 
@@ -508,7 +508,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 font-weight: 800;
                 line-height: 1.1;
                 letter-spacing: -1.5px;
-                color: $white;
+                color: $dark-green;
             }
         }
 
@@ -517,7 +517,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             p {
                 font-size: 1.15rem;
-                color: $white;
+                color: $dark-green;
                 line-height: 1.6;
                 // Açıklama başlığa göre biraz daha içeride dursun
                 max-width: 500px;
