@@ -29,6 +29,65 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 1%, rgba(0, 0, 0, 0.8) 100%);
   z-index: 2;
 }
+.hero-section .early-reg-container {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+.hero-section .early-reg-container .early-reg-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: rgba(249, 249, 249, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.hero-section .early-reg-container .reg-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 40px;
+}
+.hero-section .early-reg-container .reg-info-item:not(:last-child) {
+  border-right: 1px solid rgba(249, 249, 249, 0.15);
+}
+.hero-section .early-reg-container .reg-info-item .info-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #f9f9f9;
+  opacity: 0.85;
+  letter-spacing: 1px;
+}
+.hero-section .early-reg-container .reg-info-item .info-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #f9f9f9;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0 2px 10px rgba(0, 180, 216, 0.3);
+}
+.hero-section .early-reg-container .reg-info-item .info-value .time-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f9f9f9;
+  opacity: 0.9;
+  text-shadow: none;
+}
 .hero-section .hero-content {
   position: relative;
   z-index: 3;
@@ -97,13 +156,29 @@
   background-color: #f9f9f9;
   color: #1c4425;
 }
+@media screen and (max-width: 992px) {
+  .hero-section .early-reg-container .early-reg-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-section .early-reg-container .reg-info-item:nth-child(2) {
+    border-right: none;
+  }
+  .hero-section .early-reg-container .reg-info-item:nth-child(1),
+  .hero-section .early-reg-container .reg-info-item:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+}
 @media screen and (max-width: 850px) {
   .hero-section {
     height: 75vh;
     padding-bottom: 50px;
   }
+  .hero-section .early-reg-container {
+    display: none !important;
+  }
   .hero-section .hero-content {
     margin-bottom: -100px;
+    margin-top: 0;
   }
   .hero-section .hero-content p:not(.hero-badge) {
     margin-bottom: 24px;
@@ -120,6 +195,11 @@
   .hero-section .hero-content .btn-primary:hover {
     background-color: #f9f9f9;
     color: #1c4425;
+  }
+}
+@media screen and (max-height: 870px) {
+  .hero-section .early-reg-container {
+    display: none !important;
   }
 }
 
@@ -752,14 +832,14 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: #1c4425;
     cursor: pointer;
     transition: all 0.3s ease;
   }
   .facility-section .slider-dots .dot.active {
     width: 24px;
     border-radius: 4px;
-    background-color: #f9f9f9;
+    background-color: #ff5c00;
   }
 }
 
@@ -875,129 +955,6 @@
   .sailing-package__note {
     text-align: left;
     padding: 1.25rem;
-  }
-}
-
-.early-reg-section {
-  width: 100%;
-  background-color: #f1f8e7;
-  padding: 100px 20px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
-.early-reg-section .early-reg-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-.early-reg-section .early-reg-header {
-  margin-bottom: 70px;
-}
-.early-reg-section .early-reg-header .section-subtitle {
-  display: inline-block;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #1c4425;
-  margin-bottom: 15px;
-}
-.early-reg-section .early-reg-header h2 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -2px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.early-reg-section .early-reg-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-bottom: 70px;
-  padding: 40px;
-  background-color: #1c4425;
-  border-radius: 40px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
-}
-.early-reg-section .reg-info-item {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 20px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.early-reg-section .reg-info-item .info-label {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #f9f9f9;
-  letter-spacing: 1px;
-}
-.early-reg-section .reg-info-item .info-value {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #f9f9f9;
-  line-height: 1.2;
-}
-.early-reg-section .reg-info-item .info-value .time-text {
-  margin-right: 4px;
-}
-.early-reg-section .reg-info-item .info-value .time-text:last-child {
-  margin-right: 0;
-}
-.early-reg-section .reg-info-item:not(:last-child) {
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-.early-reg-section .early-reg-footer .btn-primary {
-  padding: 20px 50px;
-  font-size: 1.2rem;
-  border-radius: 100px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  background-color: #ff5c00;
-  color: #f9f9f9;
-}
-.early-reg-section .early-reg-footer .btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-  background-color: #1c4425;
-}
-@media screen and (max-width: 992px) {
-  .early-reg-section .early-reg-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 30px;
-  }
-  .early-reg-section .reg-info-item:nth-child(2) {
-    border-right: none;
-  }
-}
-@media screen and (max-width: 600px) {
-  .early-reg-section {
-    padding: 60px 20px;
-  }
-  .early-reg-section .early-reg-header h2 {
-    font-size: 2.2rem;
-  }
-  .early-reg-section .early-reg-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 20px;
-  }
-  .early-reg-section .reg-info-item {
-    border-right: none !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding: 15px 0;
-  }
-  .early-reg-section .reg-info-item:last-child {
-    border-bottom: none;
-  }
-  .early-reg-section .early-reg-footer .btn-primary {
-    width: 100%;
-    text-align: center;
   }
 }
 
@@ -1409,4 +1366,4 @@
   .faq-section .faq-item.active .faq-answer-content {
     padding: 0 18px 18px 18px;
   }
-}/*# sourceMappingURL=Inter-Company-Sailing-Cup.css.map */
+}/*# sourceMappingURL=inter-company-sailing-cup.css.map */

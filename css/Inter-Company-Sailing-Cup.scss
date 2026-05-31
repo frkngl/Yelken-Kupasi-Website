@@ -18,7 +18,7 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; // İçeriği dikeyde ortalar
     align-items: center;
 
     .hero-image {
@@ -42,6 +42,78 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 2;
     }
 
+    // ==========================================
+    // --- YENİ EKLENEN: SAYAÇ ALANI ---
+    // ==========================================
+    .early-reg-container {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 4;
+        width: fit-content;
+        max-width: $max-width;
+        padding: 0 24px;
+
+        .early-reg-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background-color: rgba($white, 0.1);
+            backdrop-filter: blur(12px); // Arkadaki resmi şık bir şekilde bulanıklaştırır
+            border-radius: 20px;
+            border: 1px solid rgba($white, 0.2); // İnce, zarif bir cam çerçevesi
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); // Havada asılı durma hissi
+        }
+
+        .reg-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 16px 40px;
+
+            &:not(:last-child) {
+                border-right: 1px solid rgba($white, 0.15); // Ayraç çizgisi de cama uygun
+            }
+
+            .info-label {
+                font-size: 0.8rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $white;
+                opacity: 0.85; // Tam beyaz yerine biraz yumuşatıldı
+                letter-spacing: 1px;
+            }
+
+            .info-value {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 6px;
+                font-size: 1.25rem;
+                font-weight: 800;
+
+                color: $white;
+                line-height: 1.2;
+                text-align: center;
+                text-shadow: 0 2px 10px rgba($light-blue, 0.3); // Sayılara çok hafif bir parlama
+
+                .time-text {
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    color: $white; // 'Gün' ve 'Saat' yazıları beyaz kalarak sayıları öne çıkarır
+                    opacity: 0.9;
+                    text-shadow: none; // Yazılarda parlamayı kapatıyoruz
+                }
+            }
+        }
+    }
+
+    // ==========================================
+    // --- MEVCUT HERO İÇERİĞİ (Dokunulmadı) ---
+    // ==========================================
     .hero-content {
         position: relative;
         z-index: 3;
@@ -54,38 +126,34 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         // --- Üst Bilgi Rozeti (Badge) ---
         .hero-badge {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.15); // Saydam şık bir arka plan
-            border: 1px solid rgba(255, 255, 255, 0.4); // İnce ve zarif çerçeve
-            backdrop-filter: blur(5px); // Arka planı hafifçe flulaştıran cam efekti
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(5px);
 
-            // Clamp ile dinamik font ve padding
             font-size: clamp(0.75rem, 2vw, 0.9rem);
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: clamp(16px, 3vw, 24px);
             padding: clamp(6px, 1.5vw, 8px) clamp(16px, 3vw, 24px);
 
-            border-radius: 50px; // Yuvarlak hap görünümü
-            opacity: 1; // Alttaki genel 'p' ayarını ezer
+            border-radius: 50px;
+            opacity: 1;
             max-width: fit-content;
             margin-left: auto;
             margin-right: auto;
         }
 
         h1 {
-            // Clamp: Minimum 2rem, esnek boyut, Maksimum 4rem
             font-size: clamp(2rem, 6vw + 0.5rem, 4rem);
             font-weight: 800;
             line-height: 1.2;
             letter-spacing: 1px;
             margin-bottom: 16px;
-            word-wrap: break-word; // Ekran çok daraldığında uzun kelimeleri kırar
+            word-wrap: break-word;
             hyphens: auto;
         }
 
-        // Genel (Alttaki) Açıklama Paragrafı
         p:not(.hero-badge) {
-            // Clamp: Minimum 1rem, esnek boyut, Maksimum 1.25rem
             font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
             font-weight: 400;
             opacity: 0.9;
@@ -95,7 +163,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             margin-right: auto;
         }
 
-        // Butonlar
         .hero-buttons {
             display: flex;
             justify-content: center;
@@ -123,14 +190,41 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 
-    // --- Mobil Uyumluluk ---
+    // ==========================================
+    // --- MOBİL UYUMLULUK ---
+    // ==========================================
+    @media screen and (max-width: 992px) {
+
+        // Tablete düşerken sayacı gizlemek istersen display: none yapabilirsin, 
+        // ancak sen mobilde gizlensin dediğin için burada sadece yapıyı düzenliyorum.
+        .early-reg-container {
+            .early-reg-grid {
+                grid-template-columns: repeat(2, 1fr); // Tablet için 2x2
+            }
+
+            .reg-info-item:nth-child(2) {
+                border-right: none; // 2x2'de ortadaki çizgiyi kaldır
+            }
+
+            .reg-info-item:nth-child(1),
+            .reg-info-item:nth-child(2) {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15); // Üst satırın alt çizgisi
+            }
+        }
+    }
+
     @media screen and (max-width: 850px) {
         height: 75vh;
         padding-bottom: 50px;
 
-        // Font ezmeleri clamp() ile halledildiği için sadece yapısal kutu ayarları kaldı
+        // MOBİLDE SAYAÇ GİZLENİR (İsteğin üzerine)
+        .early-reg-container {
+            display: none !important;
+        }
+
         .hero-content {
             margin-bottom: -100px;
+            margin-top: 0; // Mobilde sayaç olmadığı için margin-top'u sıfırlıyoruz
 
             p:not(.hero-badge) {
                 margin-bottom: 24px;
@@ -150,6 +244,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                     color: $dark-green;
                 }
             }
+        }
+    }
+
+    @media screen and (max-height: 870px) {
+
+        // MOBİLDE SAYAÇ GİZLENİR (İsteğin üzerine)
+        .early-reg-container {
+            display: none !important;
         }
     }
 }
@@ -935,14 +1037,14 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 width: 8px;
                 height: 8px;
                 border-radius: 50%;
-                background-color: rgba(0, 0, 0, 0.2);
+                background-color: $dark-green;
                 cursor: pointer;
                 transition: all 0.3s ease;
 
                 &.active {
                     width: 24px;
                     border-radius: 4px;
-                    background-color: $white;
+                    background-color: $orange;
                 }
             }
         }
@@ -1076,159 +1178,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         @media (max-width: 576px) {
             text-align: left;
             padding: 1.25rem;
-        }
-    }
-}
-
-// --- Erken Kayıt Bölümü (Early Registration) ---
-.early-reg-section {
-    width: 100%;
-    background-color: $light-green;
-    padding: 100px 20px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05); // Üstten hafif bir ayrım çizgisi
-
-    .early-reg-container {
-        max-width: $max-width;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    // --- Başlık Alanı ---
-    .early-reg-header {
-        margin-bottom: 70px;
-
-        .section-subtitle {
-            display: inline-block;
-            font-size: 1rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: $dark-green;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            font-size: 3.5rem; // Vurucu büyüklük
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    }
-
-    // --- 4'lü Bilgi Izgarası ---
-    .early-reg-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr); // Yan yana 4 eşit sütun
-        gap: 30px;
-        margin-bottom: 70px;
-        padding: 40px;
-        background-color: $dark-green; // Hafif gri zemin üzerine kartlar
-        border-radius: 40px;
-        border: 1px solid rgba(0, 0, 0, 0.03);
-    }
-
-    .reg-info-item {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 20px;
-        transition: $transition;
-
-        .info-label {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            color: $white;
-            letter-spacing: 1px;
-        }
-
-        .info-value {
-            display: flex;
-            align-items: center; // Metin ve sayılar aynı boyutta olduğu için ortadan hizalıyoruz
-            justify-content: center;
-            flex-wrap: wrap; // Ekrana sığmadığında alt satıra geçmesine izin verir
-            gap: 6px;
-            font-size: 1.4rem; // Hem sayılar hem yazılar bu boyutta olacak
-            font-weight: 800; // Hem sayılar hem yazılar bu kalınlıkta olacak
-            color: $white;
-            line-height: 1.2;
-
-            .time-text {
-                // Sadece aralarındaki boşlukları koruyoruz, font ayarları üstten miras alınıyor
-                margin-right: 4px;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-
-        // Ortadaki öğelere sağdan bir sınır ekleyerek masaüstünde ayırabiliriz
-        &:not(:last-child) {
-            border-right: 1px solid rgba(0, 0, 0, 0.1);
-        }
-    }
-
-    // --- Alt Buton ---
-    .early-reg-footer {
-        .btn-primary {
-            padding: 20px 50px;
-            font-size: 1.2rem;
-            border-radius: 100px; // Daha yuvarlak, modern buton
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            background-color: $orange;
-            color: $white;
-
-            &:hover {
-                transform: scale(1.05); // Hafif büyüme efekti
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-                background-color: $dark-green;
-            }
-        }
-    }
-
-    // ==========================================
-    // --- MOBİL UYUMLULUK (RESPONSIVE) ---
-    // ==========================================
-    @media screen and (max-width: 992px) {
-        .early-reg-grid {
-            grid-template-columns: repeat(2, 1fr); // Tablette 2x2 yapısı
-            padding: 30px;
-        }
-
-        .reg-info-item:nth-child(2) {
-            border-right: none; // 2x2 yapısında 2. öğenin sağ çizgisini kaldır
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        padding: 60px 20px;
-
-        .early-reg-header h2 {
-            font-size: 2.2rem;
-        }
-
-        .early-reg-grid {
-            grid-template-columns: 1fr; // Mobilde hepsi alt alta
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .reg-info-item {
-            border-right: none !important; // Mobilde tüm yan çizgileri kaldır
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05); // Alt alta ayır
-            padding: 15px 0;
-
-            &:last-child {
-                border-bottom: none;
-            }
-        }
-
-        .early-reg-footer .btn-primary {
-            width: 100%; // Mobilde butonu tam genişlik yap
-            text-align: center;
         }
     }
 }

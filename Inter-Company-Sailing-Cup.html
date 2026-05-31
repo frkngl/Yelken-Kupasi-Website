@@ -41,7 +41,7 @@
 
     <!-- 7. CSS Dosyaları -->
     <link rel="stylesheet" href="css/global.css">
-    <link rel="stylesheet" href="css/Inter-Company-Sailing-Cup.css">
+    <link rel="stylesheet" href="css/inter-company-sailing-cup.css">
 
     <!-- 8. Favicon (Tarayıcı Sekmesi Simgeleri) -->
     <link rel="shortcut icon" href="image/logotab.jpg" type="image/png">
@@ -68,7 +68,7 @@
                     <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
                     <!-- <li><a href="sailing-race-dates-and-prices.html" data-i18n="nav_history">Yelken Yarışı Tarihi ve
                             Fiyatlar</a></li> -->
-                    <li><a href="Inter-Company-Sailing-Cup.html" class="active" data-i18n="nav_history">Şirketler Arası
+                    <li><a href="inter-company-sailing-cup.html" class="active" data-i18n="nav_history">Şirketler Arası
                             Yelken Kupası</a></li>
                     <li><a href="#" data-i18n="nav_history">Şirket İçi Yelken Kupası</a></li>
                     <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
@@ -96,9 +96,26 @@
     </header>
 
     <section id="home" class="hero-section">
+        <div class="early-reg-container">
+            <div class="early-reg-grid">
+                <div class="reg-info-item">
+                    <span class="info-label" data-i18n="early_label1">Bir Sonraki Etkinliğe Kalan Süre</span>
+                    <div class="info-value">
+                        <span id="countdown-days">--</span>
+                        <span class="time-text" data-i18n="early_val1_days">Gün</span>
+                        <span id="countdown-hours">--</span>
+                        <span class="time-text" data-i18n="early_val1_hours">Saat</span>
+                    </div>
+                </div>
+                <div class="reg-info-item">
+                    <span class="info-label" data-i18n="early_label2">Yarış Günleri</span>
+                    <div class="info-value" data-i18n="early_val2">19-20-21 Haziran 2026</div>
+                </div>
+            </div>
+        </div>
+
         <img src="image/image7.jpg" alt="Yelken Kupası Ana Resmi" class="hero-image">
         <div class="hero-content">
-            <!-- Üstteki yazıya 'hero-badge' sınıfı eklendi -->
             <p class="hero-badge" data-i18n="hero_desc_top">Şirketler Arası Yelken Kupası</p>
 
             <h1 data-i18n="hero_title">Şirketinizi Sahaya Çıkarın,<br> Denizde Rakiplerinizle Yarışın</h1>
@@ -453,42 +470,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="early-registration" class="early-reg-section">
-        <div class="early-reg-container">
-            <div class="early-reg-header">
-                <span class="section-subtitle" data-i18n="early_subtitle">Bir Sonraki Etkinliğe Kalan Süre</span>
-                <h2 data-i18n="early_title">2026 Sezonu Yelken Yarışını Kaçırma</h2>
-            </div>
-
-            <div class="early-reg-grid">
-                <div class="reg-info-item">
-                    <span class="info-label" data-i18n="early_label1">Kalan Süre</span>
-                    <div class="info-value">
-                        <span id="countdown-days">--</span>
-                        <span class="time-text" data-i18n="early_val1_days">Gün</span>
-                        <span id="countdown-hours">--</span>
-                        <span class="time-text" data-i18n="early_val1_hours">Saat</span>
-                    </div>
-                </div>
-                <div class="reg-info-item">
-                    <span class="info-label" data-i18n="early_label2">Yarış Günleri</span>
-                    <div class="info-value" data-i18n="early_val2">19-20-21 Haziran 2026</div>
-                </div>
-                <div class="reg-info-item">
-                    <span class="info-label" data-i18n="early_label3">Ödül Töreni</span>
-                    <div class="info-value" data-i18n="early_val3">21 Haziran 2026</div>
-                </div>
-                <div class="reg-info-item">
-                    <span class="info-label" data-i18n="early_label4">Etkinlik Yeri</span>
-                    <div class="info-value" data-i18n="early_val4">Gülbahçe Yelken Kulübü</div>
-                </div>
-            </div>
-            <div class="early-reg-footer">
-                <a href="contact.html#register" class="btn-primary" data-i18n="btn_register_4">Hemen Kayıt Ol</a>
             </div>
         </div>
     </section>
