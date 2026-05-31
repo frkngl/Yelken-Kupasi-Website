@@ -24,16 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // pathname değişmeyeceği için bir kez hesapla, closure'da tut
     const { pathname } = window.location;
 
-    // Ana sayfa kontrolleri (Fazladan boşluk düzeltildi)
+    // Ana sayfa kontrolleri
     const isHomePage = pathname === '/' ||
         pathname === '/Yelken-Kupasi-Website/' ||
         pathname.endsWith('index.html');
 
-    // Inter-Company sayfası kontrolü (Ayrı bir sayfa olarak tanımlandı)
+    // Inter-Company (Şirketler Arası) sayfası kontrolü
     const isInterCompanyPage = pathname.endsWith('inter-company-sailing-cup.html');
 
-    // Scroll efekti hem Ana Sayfa'da hem de Inter-Company sayfasında çalışacaksa:
-    if (header && (isHomePage || isInterCompanyPage)) {
+    // YENİ EKLENEN: Company-Internal (Şirket İçi) sayfası kontrolü
+    const isInternalCompanyPage = pathname.endsWith('company-internal-sailing-cup.html');
+
+    // Scroll efekti ilgili sayfalarda çalışacak şekilde güncellendi:
+    if (header && (isHomePage || isInterCompanyPage || isInternalCompanyPage)) {
         let ticking = false;
 
         const updateHeader = () => {

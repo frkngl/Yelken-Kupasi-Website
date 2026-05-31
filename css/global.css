@@ -361,6 +361,13 @@ body .whatsapp-btn:hover {
 .site-footer .footer-links ul li a:hover {
   color: #ff5c00;
 }
+.site-footer .footer-links ul li:first-child a {
+  pointer-events: none;
+  cursor: default;
+}
+.site-footer .footer-links ul li:first-child a:hover {
+  color: #f9f9f9;
+}
 .site-footer .footer-social .social-icons {
   display: flex;
   flex-direction: column;

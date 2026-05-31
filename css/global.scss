@@ -451,6 +451,17 @@ body {
                         color: $orange;
                     }
                 }
+
+                &:first-child {
+                    a {
+                        pointer-events: none;
+                        cursor: default;
+
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
             }
         }
     }
