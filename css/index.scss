@@ -226,19 +226,6 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             line-height: 1.6;
             margin-bottom: 35px;
         }
-
-        .btn-primary {
-            padding: 14px 36px;
-            font-size: 1.1rem;
-            background-color: $orange;
-            color: $white;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-                background-color: $dark-green;
-                color: $white;
-            }
-        }
     }
 
     // --- Yuvarlak Resimlerin Genel Ayarları ---

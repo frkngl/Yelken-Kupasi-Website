@@ -187,17 +187,6 @@
   line-height: 1.6;
   margin-bottom: 35px;
 }
-.intro-section .intro-content .btn-primary {
-  padding: 14px 36px;
-  font-size: 1.1rem;
-  background-color: #ff5c00;
-  color: #f9f9f9;
-  transition: all 0.3s ease-in-out;
-}
-.intro-section .intro-content .btn-primary:hover {
-  background-color: #1c4425;
-  color: #f9f9f9;
-}
 .intro-section .circle-img {
   position: absolute;
   border-radius: 50%;

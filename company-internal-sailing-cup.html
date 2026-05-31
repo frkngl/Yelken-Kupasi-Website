@@ -92,29 +92,11 @@
     </header>
 
     <section id="home" class="hero-section">
-        <div class="early-reg-container">
-            <div class="early-reg-grid">
-                <div class="reg-info-item">
-                    <span class="info-label" data-i18n="early_label1">Bir Sonraki Etkinliğe Kalan Süre</span>
-                    <div class="info-value">
-                        <span id="countdown-days">--</span>
-                        <span class="time-text" data-i18n="early_val1_days">Gün</span>
-                        <span id="countdown-hours">--</span>
-                        <span class="time-text" data-i18n="early_val1_hours">Saat</span>
-                    </div>
-                </div>
-                <div class="reg-info-item">
-                    <span class="info-label" data-i18n="early_label2">Yarış Günleri</span>
-                    <div class="info-value" data-i18n="early_val2">19-20-21 Haziran 2026</div>
-                </div>
-            </div>
-        </div>
-
         <img src="image/image7.jpg" alt="Yelken Kupası Ana Resmi" class="hero-image">
         <div class="hero-content">
             <p class="hero-badge" data-i18n="hero_desc_top">Şirket İçi Yelken Kupası</p>
 
-            <h1 data-i18n="hero_title">Tamamen Şirketinize Özel Bir Deniz Deneyimi
+            <h1 data-i18n="hero_title">Tamamen Şirketinize Özel<br /> Bir Deniz Deneyimi
             </h1>
 
             <p data-i18n="hero_desc">Kapalı devre, sadece sizin ekibinize ait bir yelken kupası. Katılımcı sayınıza göre
@@ -122,7 +104,8 @@
                 lisanslı bir dümenci eşlik eder.</p>
 
             <div class="hero-buttons">
-                <a href="#packages" class="btn-primary" data-i18n="hero_btn">Takımınızı Kaydedin</a>
+                <a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank" class="btn-primary"
+                    data-i18n="hero_btn">Takımınızı Kaydedin</a>
             </div>
         </div>
     </section>
@@ -136,7 +119,7 @@
                     tasarlandı. Kalabalık ekipler, departman kaynaşmaları, bayi buluşmaları, yıl sonu kutlamaları ya da
                     özel bir kurumsal etkinlik için ideal. Parkur da, sosyal alan da, program da yalnızca size aittir.
                 </p>
-                <a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank" class="btn-primary"
+                <a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank" class="btn-primary"
                     data-i18n="btn_register_2">Kayıt Ol</a>
             </div>
 
@@ -180,39 +163,67 @@
         <img class="modal-content" id="expandedImg" alt="Büyütülmüş Resim">
     </div>
 
-    <section id="about" class="about-section">
-        <div class="about-container">
+    <section class="team-scale-section">
+        <div class="team-scale-container">
 
-            <div class="about-image-left">
-                <img src="image/image2.jpg" alt="About">
+            <!-- Başlık ve Açıklama -->
+            <div class="team-scale-content">
+                <h2 class="team-scale-title">Ekibiniz Kadar Büyük</h2>
+                <p class="team-scale-desc">
+                    Yarışlar tekne bazlı yapılır, her teknede üç kişi yarışır ve her takıma lisanslı bir dümenci eşlik
+                    eder. Ekibinizin büyüklüğüne göre tekne sayısı artırılır ve size özel bir filo kurulur. Katılımcı
+                    sayınız arttıkça etkinliğin gün sayısı ve programı da buna göre genişletilir.
+                </p>
             </div>
 
-            <div class="about-content">
-                <span class="section-subtitle" data-i18n="about_subtitle">Deneyim</span>
-                <h2 data-i18n="about_title">Sadece Yarış Değil, Bir Festival</h2>
-                <p class="main-desc" data-i18n="about_desc">Yelken Kupası sadece bir yarış değil, kurumsal bir
-                    festivaldir. Yarış aralarında ve sonrasında Gülbahçe Yelken Kulübü'nün karadaki özel alanlarında DJ
-                    performansları, ikramlar ve sosyal alanlar sizi bekler. Denizde rekabet, karada kutlama
-                    vardır.
+            <!-- Responsive Tablo Alanı -->
+            <div class="table-responsive-wrapper">
 
-                <div class="about-steps">
-                    <div class="step-box">
-                        <h4>1. Gün</h4>
-                        <p>Tanışma, sabah eğitimi ve ilk yarışlar başlar.</p>
-                    </div>
-                    <div class="step-box">
-                        <h4>2. Gün</h4>
-                        <p>Strateji ve hızın ön plana çıktığı yarışlar başlar, akşam barbekü partisi sizi bekler.</p>
-                    </div>
-                    <div class="step-box">
-                        <h4>3. Gün</h4>
-                        <p>Büyük final, sertifika ve madalya teslimi ve ödül töreni.</p>
-                    </div>
+                <!-- Sadece mobilde görünen kaydırma ipucu -->
+                <div class="scroll-hint">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                    <span>Tabloyu yana kaydırabilirsiniz</span>
+                </div>
+
+                <!-- Kaydırılabilir Tablo Konteyneri -->
+                <div class="table-container">
+                    <table class="team-scale-table">
+                        <thead>
+                            <tr>
+                                <th>Ekip Büyüklüğü</th>
+                                <th>Yaklaşık Takım Sayısı</th>
+                                <th>Önerilen Format</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>12 - 24 kişi</td>
+                                <td>4 - 8 takım</td>
+                                <td>Tek günlük özel kupa</td>
+                            </tr>
+                            <tr>
+                                <td>24 - 48 kişi</td>
+                                <td>8 - 16 takım</td>
+                                <td>İki günlük kupa + sosyal program</td>
+                            </tr>
+                            <tr>
+                                <td>48 kişi ve üzeri</td>
+                                <td>16+ takım</td>
+                                <td>Çok günlük, tamamen özel projelendirme</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="about-image-right">
-                <img src="image/image4.jpg" alt="Camp Fun">
-            </div>
+
+            <!-- Alt Not -->
+            <p class="team-scale-note">
+                <strong>Not:</strong> Bu tablo yön vermek içindir. Kesin format, katılımcı sayınıza ve isteklerinize
+                göre birlikte belirlenir.
+            </p>
 
         </div>
     </section>
@@ -498,32 +509,32 @@
                     <tbody>
                         <tr>
                             <td data-i18n="date_1">1 Temmuz - 5 Temmuz</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                         <tr>
                             <td data-i18n="date_2">8 Temmuz - 12 Temmuz</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                         <tr>
                             <td data-i18n="date_3">15 Temmuz - 19 Temmuz</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                         <tr>
                             <td data-i18n="date_4">29 Temmuz - 2 Ağustos</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                         <tr>
                             <td data-i18n="date_5">5 Ağustos - 9 Ağustos</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                         <tr>
                             <td data-i18n="date_6">12 Ağustos - 16 Ağustos</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                         <tr>
@@ -532,7 +543,7 @@
                         </tr>
                         <tr>
                             <td data-i18n="date_8">2 Eylül - 6 Eylül</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                         <tr>
@@ -541,7 +552,7 @@
                         </tr>
                         <tr>
                             <td data-i18n="date_10">16 Eylül - 20 Eylül</td>
-                            <td><a href="https://yelkenkupasi.fillout.com/erkenkayit" target="_blank"
+                            <td><a href="https://yelkenkupasi.fillout.com/sirketici" target="_blank"
                                     class="badge available" data-i18n="status_available">Müsait</a></td>
                         </tr>
                     </tbody>
