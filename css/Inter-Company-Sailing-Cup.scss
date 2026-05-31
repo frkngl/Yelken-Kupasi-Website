@@ -3,6 +3,7 @@ $white: #f9f9f9;
 $dark-green: #1c4425;
 $orange: #ff5c00;
 $olive-green: #46664e;
+$green-ultra-light: #e5f0d5;
 $light-green: #f1f8e7;
 $green: #93d35c;
 $light-blue: #00b4d8; // Yelken konseptine uygun, enerjik bir açık deniz mavisi
@@ -1520,6 +1521,361 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
             h3 {
                 font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.pricing-section {
+    padding: 100px 20px;
+    background-color: $light-green; // Section arka planı
+    display: flex;
+    justify-content: center;
+
+    .pricing-container {
+        max-width: 1000px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 2rem;
+        align-items: stretch;
+
+        // Mobil uyumluluk
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .value-props {
+        background: $white;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba($dark-green, 0.05);
+
+        .section-title {
+            color: $dark-green;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .included-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+
+            li {
+                position: relative;
+                padding-left: 2rem;
+                margin-bottom: 1rem;
+                color: $olive-green;
+                font-size: 1.05rem;
+                line-height: 1.4;
+                font-weight: 500;
+
+                &::before {
+                    content: "✓";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: $light-blue; // Deniz mavisi tik işaretleri
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .excluded-info {
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba($olive-green, 0.2);
+
+            h4 {
+                color: $orange; // Uyarı niteliği için turuncu
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            p {
+                color: $olive-green;
+                font-size: 0.95rem;
+                line-height: 1.5;
+                margin: 0;
+            }
+        }
+    }
+
+    .price-card {
+        background: $dark-green; // Fiyat kartı için güçlü kontrast
+        color: $white;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba($dark-green, 0.25);
+
+        .price-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .amount {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0;
+            line-height: 1;
+            color: $white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+            .tax-info {
+                display: block;
+                font-size: 1rem;
+                font-weight: 400;
+                opacity: 0.8;
+                margin-top: 0.5rem;
+            }
+        }
+
+        .cta-button {
+            margin-top: 2.5rem;
+            padding: 1rem 2rem;
+            background-color: $white; // Aksiyon butonu için enerjik mavi
+            color: $dark-green;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: $white;
+                background-color: $orange; // Hoverda şık bir turuncu patlaması
+            }
+        }
+    }
+}
+
+// Aciliyet hissi (Son 8 takım vb.) için nabız animasyonu
+@keyframes warningPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(#ff5c00, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 8px rgba(#ff5c00, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(#ff5c00, 0);
+    }
+}
+
+// Mobil kaydırma oku animasyonu
+@keyframes swipeAnim {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.schedule-section {
+    background-color: $dark-green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 100px 20px;
+
+    .schedule-container {
+        width: 100%;
+        max-width: $max-width;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    h1 {
+        color: $light-green;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+    }
+
+    .schedule-desc {
+        color: $light-green;
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+    }
+
+    // Kaydırma İpucu (Masaüstünde gizli)
+    .table-scroll-hint {
+        display: none;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        color: $light-green;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            margin-right: 6px;
+            animation: swipeAnim 1.5s infinite ease-in-out;
+        }
+    }
+
+    // Tabloyu saran div (Scroll eklendi)
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        background-color: $white;
+        border-radius: 12px;
+        padding: 1px;
+
+        // Mobilde özel kaydırma çubuğu tasarımı
+        &::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba($olive-green, 0.3);
+            border-radius: 10px;
+        }
+    }
+
+    .schedule-table {
+        width: 100%;
+        min-width: 600px; // Mobilde sıkışmayı önler, scroll tetikler
+        border-collapse: collapse;
+        text-align: center;
+
+        th,
+        td {
+            padding: 1.2rem 1rem;
+            border-bottom: 1px solid rgba($olive-green, 0.15);
+        }
+
+        th {
+            background-color: $light-green;
+            color: $dark-green;
+            font-size: 1.1rem;
+            font-weight: 600;
+
+            &:first-child {
+                border-top-left-radius: 12px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 12px;
+            }
+        }
+
+        tbody tr {
+            transition: $transition;
+
+            &:hover {
+                background-color: rgba($light-green, 0.5);
+            }
+
+            &:last-child td {
+                border-bottom: none;
+            }
+        }
+
+        td {
+            color: $dark-green;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        // Durum (Status) Rozetleri
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+
+            &.available {
+                background: linear-gradient(135deg, #11d979 0%, #04974d 100%);
+                color: #ffffff;
+                box-shadow: 0 4px 10px rgba(17, 217, 121, 0.3);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+
+                &:hover {
+                    transform: translateY(-3px) scale(1.03);
+                    box-shadow: 0 8px 18px rgba(17, 217, 121, 0.5);
+                    filter: brightness(1.1);
+                }
+
+                &:active {
+                    transform: translateY(1px) scale(0.98);
+                    box-shadow: 0 2px 5px rgba(17, 217, 121, 0.3);
+                    transition: all 0.1s ease;
+                }
+            }
+
+            // YENİ EKLENEN: Dikkat çekici uyarı rozeti
+            &.warning {
+                background: linear-gradient(135deg, lighten($orange, 5%) 0%, $orange 100%);
+                color: $white;
+                border: 1px solid rgba($white, 0.2);
+                animation: warningPulse 2s infinite;
+                pointer-events: none; // Bilgi amaçlı olduğu için tıklanmasını engelliyoruz
+            }
+
+            &.optional {
+                background-color: rgba($orange, 0.15);
+                color: $orange;
+                pointer-events: none;
+            }
+
+            &.reserved {
+                background-color: #fce4e4;
+                color: #d93025;
+                pointer-events: none;
+            }
+        }
+    }
+
+    // Mobil Görünüm İyileştirmeleri
+    @media screen and (max-width: 768px) {
+        padding: 100px 15px 50px;
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        .schedule-desc {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .table-scroll-hint {
+            display: flex; // Mobilde ipucunu göster
+        }
+
+        .schedule-table {
+
+            th,
+            td {
+                padding: 1rem 0.5rem;
             }
         }
     }
